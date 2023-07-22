@@ -25,7 +25,7 @@ export const Services = () => {
 					{cardDetails.map((entry, index) => (
 						<ServiceCard
 							key={index}
-							icon={entry.icon}
+							icon={entry.icon} 
 							title={entry.title}
 							content={entry.content}
 							onMouseOver={handleMouseOver}

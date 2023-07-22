@@ -29,12 +29,14 @@ export const Portfolio = () => {
 									<div className={`${styles.pCard} col-lg-4 col-sm-12`}>
 										<div className="card">
 											<div className="card-img-top">
-												<Image className={styles.cardImg}  src={card.img} alt="" width={100} height={100} />
+												<Image className={styles.cardImg}  src={card.img} alt="" width={1000} height={1000} />
 											</div>
 											<div className="card-body">
 												<h4 className="card-title">{card.title}</h4>
 												<p className="card-text">{card.text}</p>
-												<Link href="#">See more</Link>
+												<Link className={styles.cardLink} href="#">
+													<p>See More</p>
+												</Link>
 											</div>
 										</div>
 									</div>

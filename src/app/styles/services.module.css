@@ -15,7 +15,7 @@
   transform: scale(1);
   transition: all 0.1s ease-out 0s;
 }
-.serviceCardItems{
+.serviceCardItem{
 	max-width: 14rem;
 	margin-inline: auto;
 }
@@ -37,7 +37,8 @@
   transform: translateX(-50%);
 }
 
-.serviceCardIcon i::before {
+.serviceCardIcon > * {
+   font-family: "Flaticon";
   font-size: 50px;
   display: block;
   margin-top: 1.5rem;

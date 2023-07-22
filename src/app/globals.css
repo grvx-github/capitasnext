@@ -1,5 +1,24 @@
-*{
-	padding: 0;
-	margin: 0;
-	box-sizing: border-box;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.btn2 {
+  background: linear-gradient(90deg, #0b2464 100%, #0b2464 50%) var(--_p, 50%) /
+    200%;
+  border: 1px solid #0b2464;
+  padding: 0.5rem 1.5rem;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+.btn2:hover {
+  --_p: 100%;
+  scale: 1.05;
+}
+
+button a {
+  color: inherit;
+  text-decoration: none;
+  text-transform: uppercase;
 }

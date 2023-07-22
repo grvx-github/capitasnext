@@ -1,5 +1,6 @@
 import Link from "next/link";
 import styles from "@/app/styles/services.module.css";
+import { BsFillBuildingsFill, TbBuildingSkyscraper, PiStrategyThin } from "react-icons"
 
 export const ServiceCard = (props) => {
 	return (
@@ -14,7 +15,7 @@ export const ServiceCard = (props) => {
 						<p>{props.content}</p>
 					</div>
 					<div className={styles.vmBtn}>
-						<button class={styles.btn2}>
+						<button className='btn2'>
 							<Link href="">READ MORE</Link>
 						</button>
 					</div>

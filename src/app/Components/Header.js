@@ -14,7 +14,7 @@ const Header = () => {
       const scrollY = window.scrollY;
       // Set the background color to white when the user scrolls down more than 100 pixels
       if (scrollY > 100) {
-        setNavbarBgColor("grey");
+        setNavbarBgColor("rgb(33, 37, 41)");
       } else {
         setNavbarBgColor("transparent");
       }
@@ -53,7 +53,7 @@ const Header = () => {
         <div className={styles.socials}>
           <Link href="#">Call Us: +1 (514) 022-8419</Link>
           <Link href="#">Log In</Link>
-          <button className="signUp">Sign Up</button>
+          <button className={styles.signUp} >Sign Up</button>
         </div>
       </div>
     </div>

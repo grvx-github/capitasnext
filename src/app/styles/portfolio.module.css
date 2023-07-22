@@ -1,5 +1,6 @@
 .pWrapper {
-  padding: 2rem;
+  padding: 4rem 2rem;
+  overflow: hidden;
 }
 .pWrapper h2 {
   text-align: center;
@@ -7,10 +8,48 @@
   text-transform: uppercase;
   font-size: 2rem;
 }
+.pCard{
+  height: 100%;
+}
 .pCard > div{
   width: 24rem;
+  height: 100%;
 }
 .cardImg {
-  width: 100%;
-  height: auto;
+  max-width: 100%;
+  height: 24rem;
+}
+
+.cardLink{
+  text-decoration: none;
+  color: #0b2464;
+  font-weight: 800;
+  transition: all 0.3s ease;
+}
+.cardLink:hover{
+  color:#576891;
+}
+.cardLink:hover .cardLink::after{
+  animation: shake infinite 0.2s 0s infinite both ;
+}
+
+@keyframes shake {
+  0%{
+    
+    right: 0;
+  }
+
+  100%{
+    right: 1rem;
+  }
+  
+}
+.cardLink p{
+  display: inline;
+}
+.cardLink::after{
+  content: ">>>";
+  margin-left: 0.5rem;
+  width: 0rem;
+  position: relative;
 }
