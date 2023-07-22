@@ -3,7 +3,7 @@
 import ServiceCard from "./ServiceCard";
 import cardDetails from "@/app/services"
 import styles from '@/app/styles/services.module.css'
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 
 export const Services = () => {
