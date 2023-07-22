@@ -1,0 +1,49 @@
+
+.servicesSection {
+  padding-top: 8rem;
+  margin-top: 2rem;
+}
+.serviceRow {
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+}
+.serviceCard {
+  position: relative;
+  padding: 60px 20px 40px;
+  border-radius: 30px 0;
+  transform: scale(1);
+  transition: all 0.1s ease-out 0s;
+}
+.serviceCardItems{
+	max-width: 14rem;
+	margin-inline: auto;
+}
+.serviceCardIcon {
+  font-size: 50px;
+  color: #6f7173;
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  z-index: 999;
+  width: 100px;
+  height: 100px;
+  border: 1px solid #0089e9;
+  border-radius: 100%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.serviceCardIcon i::before {
+  font-size: 50px;
+  display: block;
+  margin-top: 1.5rem;
+  margin-left: 0;
+  -webkit-transition: all 0.3s ease-out 0s;
+  -moz-transition: all 0.3s ease-out 0s;
+  -o-transition: all 0.3s ease-out 0s;
+  transition: all 0.3s ease-out 0s;
+}

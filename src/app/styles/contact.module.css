@@ -1,0 +1,31 @@
+
+.contactSection h3 {
+  text-align: center;
+}
+.contactWrapper {
+  background: url(/contactBG.png);
+  padding: 8rem 4rem 4rem;
+}
+.contactForm {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem 4rem;
+}
+.messageDiv {
+  grid-row: 1/4;
+  grid-column: 2/3;
+}
+.form-control {
+  border-radius: 0;
+  font-family: hack;
+  padding-block: 0.75rem;
+}
+.messageDiv .form-control {
+  height: 100%;
+  padding-bottom: 20%;
+}
+.contactWrapper .btn3 {
+  grid-column: 1/3;
+  width: 10%;
+  margin: 1rem auto 0;
+}
