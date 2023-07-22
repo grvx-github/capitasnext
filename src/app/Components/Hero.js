@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 
 
 function Hero() {
+
 	const [loopNum, setLoopNum] = useState(0);
 	const [isDeleting, setIsDeleting] = useState(false);
 	const toRotate = ["Dreams", "Hopes", "Aspirations"];
@@ -13,17 +14,7 @@ function Hero() {
 	const [delta, setDelta] = useState(300);
 	const period = 2000;
 
-	useEffect(() => {
-		let ticker = setInterval(() => {
-			tick();
-		}, delta);
-
-		return () => {
-			clearInterval(ticker);
-		};
-	}, [text]);
-
-	const tick = () => {
+	const tick = (() => {
 		let i = loopNum % toRotate.length;
 		let fullText = toRotate[i];
 		let updatedText = isDeleting
@@ -39,12 +30,27 @@ function Hero() {
 		if (!isDeleting && updatedText === fullText) {
 			setIsDeleting(true);
 			setDelta(period);
-		} else if (isDeleting && updatedText === "") {
+		} else if (isDeleting && updatedText === '') {
 			setIsDeleting(false);
-			setLoopNum(loopNum + 1);
+			setLoopNum((prevLoopNum) => prevLoopNum + 1);
 			setDelta(500);
 		}
-	};
+	}, [text, isDeleting, delta, loopNum, toRotate]);
+
+
+
+	useEffect(() => {
+
+
+		const timer = setTimeout(() => {
+			tick();
+		}, delta);
+
+		return () => {
+			clearTimeout(timer);
+		};
+	}, [delta, tick]); // Include 'delta' in the dependency array
+
 
 	return (
 		<section className={styles.heroSection} id="home">
@@ -53,7 +59,7 @@ function Hero() {
 					<div className={styles.bannerText}>
 						<div className={styles.welcome}>
 							<h2>Welcome to </h2>
-							<Image src="/logo.png" alt="" height={75} width={100}/>
+							<Image src="/logo.png" alt="" height={75} width={100} />
 						</div>
 
 						<div className={styles.heading}>
