@@ -3,6 +3,9 @@
   margin: 0;
   box-sizing: border-box;
 }
+body{
+  overflow-x: hidden;
+}
 
 .btn2 {
   background: linear-gradient(90deg, #0b2464 100%, #0b2464 50%) var(--_p, 50%) /

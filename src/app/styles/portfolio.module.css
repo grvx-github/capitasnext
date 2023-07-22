@@ -28,19 +28,20 @@
 }
 .cardLink:hover{
   color:#576891;
+  animation: shake infinite 0.4s infinite;
+  position: relative;
+  top: 0;
+  right: 0;
 }
-.cardLink:hover .cardLink::after{
-  animation: shake infinite 0.2s 0s infinite both ;
-}
-
 @keyframes shake {
   0%{
-    
+    top: -1rem;
     right: 0;
   }
 
   100%{
     right: 1rem;
+    top: 0;
   }
   
 }
