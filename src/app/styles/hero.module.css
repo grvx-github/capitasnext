@@ -1,48 +1,48 @@
 .heroSection {
   padding: 1rem;
   min-height: 99.8vh;
-  background-image: url('../../../public/banner.png');
+  background-image: url("../../../public/banner.png");
   background-size: cover;
 }
 .bannerMain h1 {
   font-family: cc;
   letter-spacing: 1.5rem;
-  font-size:4rem;
+  font-size: 4rem;
 }
 .bannerMain {
   margin-top: 8rem;
   text-align: center;
   color: white;
 }
-.bannerMain .heading{
-	display: flex;
-	width: 100%;	
-	justify-content: space-evenly;
-	text-transform: uppercase;
-	gap: 1rem;
+.bannerMain .heading {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  text-transform: uppercase;
+  gap: 1rem;
 }
-.welcome{
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	gap: 5%;
-	width: 25%;
-	margin: auto;
+.welcome {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5%;
+  width: 25%;
+  margin: auto;
 }
-.welcome img{
-	width: 25%;
+.welcome img {
+  width: 25%;
   height: auto;
   position: relative;
   top: -0.5rem;
 }
-.bannerMain .heading h1:nth-child(1){
-	flex: 1 0 48%;
-	text-align: right;
+.bannerMain .heading h1:nth-child(1) {
+  flex: 1 0 48%;
+  text-align: right;
 }
-.bannerMain .heading h1:nth-child(2){
-	flex: 0 2 52%;
-	margin-right: auto;
-	text-align: left;
+.bannerMain .heading h1:nth-child(2) {
+  flex: 0 2 52%;
+  margin-right: auto;
+  text-align: left;
 }
 .bannerText {
   margin-top: 15%;
@@ -58,7 +58,6 @@
 .btn1 {
   background: linear-gradient(90deg, #0b2464 100%, #0b2464 50%) var(--_p, 50%) /
     200%;
-  /* -webkit-background-clip: text; */
   background-clip: text;
   border: 1px solid white;
   padding: 0.5rem 1.5rem;
@@ -90,8 +89,8 @@
 }
 .typed {
   animation: typed 2s infinite;
-	transition: all 0.4s ease;
-	margin-right: auto;
+  transition: all 0.4s ease;
+  margin-right: auto;
 }
 @keyframes typed {
   0% {

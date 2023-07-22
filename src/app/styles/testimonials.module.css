@@ -1,22 +1,23 @@
-.tWrapper{
-	background-image: url(../../../public/testiBg.jpg);
-	height: 30rem;
-	padding: 2rem 4rem;
+.tWrapper {
+  background-image: url(../../../public/testiBg.jpg);
+  height: 30rem;
+  padding: 2rem 4rem;
 }
-.testimonial{
-	padding: 4rem 2rem;
-	max-width: 70%;
-	margin: auto;
+.testimonial {
+  padding: 4rem 2rem;
+  max-width: 70%;
+  margin: auto;
 }
-.testimonial, .tWrapper h1{
-	color: #fff;
+.testimonial,
+.tWrapper h1 {
+  color: #fff;
 }
-.testimonial .personDetails{
-	display: flex;
-	gap: 1rem;
-	align-items: center;
-	margin-bottom: 1rem;
+.testimonial .personDetails {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
 }
-.testimonial .testi{
-	font-size: 1.2rem;
+.testimonial .testi {
+  font-size: 1.2rem;
 }

@@ -8,10 +8,10 @@
   text-transform: uppercase;
   font-size: 2rem;
 }
-.pCard{
+.pCard {
   height: 100%;
 }
-.pCard > div{
+.pCard > div {
   width: 24rem;
   height: 100%;
 }
@@ -20,35 +20,34 @@
   height: 24rem;
 }
 
-.cardLink{
+.cardLink {
   text-decoration: none;
   color: #0b2464;
   font-weight: 800;
   transition: all 0.3s ease;
 }
-.cardLink:hover{
-  color:#576891;
+.cardLink:hover {
+  color: #576891;
   animation: shake infinite 0.4s infinite;
   position: relative;
   top: 0;
   right: 0;
 }
 @keyframes shake {
-  0%{
+  0% {
     top: -1rem;
     right: 0;
   }
 
-  100%{
+  100% {
     right: 1rem;
     top: 0;
   }
-  
 }
-.cardLink p{
+.cardLink p {
   display: inline;
 }
-.cardLink::after{
+.cardLink::after {
   content: ">>>";
   margin-left: 0.5rem;
   width: 0rem;
