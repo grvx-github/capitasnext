@@ -2,57 +2,57 @@
 
 import Image from "next/image";
 import styles from "@/app/styles/hero.module.css"
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 
-const Hero = () => {
+function Hero() {
 
-	// const [loopNum, setLoopNum] = useState(0);
-	// const [isDeleting, setIsDeleting] = useState(false);
-	// eslint-disable-next-line react-hooks/exhaustive-deps
+	const [loopNum, setLoopNum] = useState(0);
+	const [isDeleting, setIsDeleting] = useState(false);
 	const toRotate = ["Dreams", "Hopes", "Aspirations"];
 	const [text, setText] = useState("");
-	// const [delta, setDelta] = useState(300);
+	const [delta, setDelta] = useState(300);
 	const period = 2000;
 
+	
+
+
+
 	useEffect(() => {
-		let isMounted = true;
-		let loopNum = 0;
-		let isDeleting = false;
-		let delta = 300;
 
-	const tick = () => {
-		let i = loopNum % toRotate.length;
-		let fullText = toRotate[i];
-		let updatedText;
-		if (isDeleting) {
-			updatedText = fullText.substring(0, text.length - 1);
-		} else {
-			updatedText = fullText.substring(0, text.length + 1);
-		}
-		setText(updatedText);
+		const tick = () => {
+      let i = loopNum % toRotate.length;
+      let fullText = toRotate[i];
+      let updatedText = isDeleting
+        ? fullText.substring(0, text.length - 1)
+        : fullText.substring(0, text.length + 1);
 
-		if (!isDeleting && updatedText === fullText) {
-			delta = period;
-			isDeleting = true;
-		} else if (isDeleting && updatedText === '') {
-			isDeleting = false;
-			loopNum++;
-			delta = 300;
-		}
+      setText(updatedText);
 
-		if (isMounted) {
-			setTimeout(tick, delta);
-		}
-	};
+      if (isDeleting) {
+        setDelta((prevDelta) => prevDelta / 2);
+      }
 
-	tick();
+      if (!isDeleting && updatedText === fullText) {
+        setIsDeleting(true);
+        setDelta(period);
+      } else if (isDeleting && updatedText === "") {
+        setIsDeleting(false);
+        setLoopNum(loopNum + 1);
+        setDelta(500);
+      }
+    };
 
 
-	return () => {
-		isMounted = false;
-	};
-	}, [text, toRotate, period])
+		const timer = setTimeout(() => {
+			tick();
+		}, delta);
+
+		return () => {
+			clearTimeout(timer);
+		};
+	}); // Include 'delta' in the dependency array
+
 
 	return (
 		<section className={styles.heroSection} id="home">
