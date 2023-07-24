@@ -43,7 +43,7 @@ function Hero() {
 
 
 		const timer = setTimeout(() => {
-			tick();
+			tick;
 		}, delta);
 
 		return () => {

@@ -6,7 +6,7 @@ import { Swiper } from "swiper/react";
 import { Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
-import styles from "@/app/styles/testimonials.module.css"
+import styles from "@/app/styles/testimonials.module.css";
 
 
 const testimonials = () => {
