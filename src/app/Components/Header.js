@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 
 const Header = () => {
-  const [navbarBgColor, setNavbarBgColor] = useState("transparent");
+  const [navbarBgColor, setNavbarBgColor] = useState("transparent;");
 
   // Add an event listener to change the background color on scrolling
   useEffect(() => {
