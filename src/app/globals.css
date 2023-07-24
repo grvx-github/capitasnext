@@ -25,3 +25,7 @@ button a {
   text-decoration: none;
   text-transform: uppercase;
 }
+
+li>a{
+  font-family: Roboto;
+}
