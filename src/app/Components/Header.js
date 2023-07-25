@@ -52,12 +52,14 @@ const Header = () => {
         </div>
         <div className={styles.socials}>
           <Link href="#">Call Us: +1 (514) 022-8419</Link>
-          <Link href="#">Log In</Link>
-          <button className={styles.signUp} >Sign Up</button>
+          <div className={`d-flex ${styles.logins}`}>
+            <Link href="#" className={styles.loginBtn}>Log In</Link>
+            <button className={styles.signUp}>Sign Up</button>
+          </div>
         </div>
       </div>
     </div>
   );
 }
 
-export default Header
+export default Header;

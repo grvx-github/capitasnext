@@ -12,14 +12,8 @@ import Portfolio from './Components/Portfolio';
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-
       <body>
-        <Header />
         {children}
-        <About />
-        <Services />
-        <Portfolio/>
-        
       </body>
     </html>
   )

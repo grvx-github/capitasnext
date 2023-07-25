@@ -9,14 +9,21 @@
   padding: 1rem 2rem 1rem 4rem;
   z-index: 5000;
   transition: all 0.2s ease-in;
+  font-size: 1.1rem;
 }
-
 .collapseableMenu {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex: 1 0 52%;
+  margin-left: auto;
 }
-
+.logo{
+  flex: 1 0 10%;
+}
+.header .socials{
+  flex: 1 0 30%;
+}
 .collapseableMenu ul {
   list-style: none;
   display: flex;
@@ -24,35 +31,61 @@
   column-gap: 2.5rem;
   color: aliceblue;
   margin-bottom: 0;
+  font-size: 1.1rem;
 }
-
 .collapseableMenu a {
   text-decoration: none;
   color: inherit;
 }
-.collapseableMenu a:hover,
-.socials a:hover {
-  color: burlywood;
+.collapseableMenu a:hover{
+  color: rgba(231, 244, 255, 0.863);
 }
-
 .socials {
   display: flex;
   column-gap: 2rem;
   padding-right: 3rem;
   align-items: center;
 }
-
-.socials a {
+.socials>a{
   text-decoration: none;
   color: aliceblue;
+}
+.socials >a:hover{
+  color: rgba(231, 244, 255, 0.863);;
 }
 .signUp {
   background-color: #2f3e6583;
   padding: 0.5rem 1rem;
   transition: 0.2s ease;
   border: none;
+  -ms-transform: skewX(-20deg);
+  -webkit-transform: skewX(-20deg);
+  transform: skewX(-20deg);
+  color: white;
 }
 .signUp:hover {
   background-color: #2f3e65;
   color: white;
+}
+.logins {
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.loginBtn{
+  position: relative;
+  -ms-transform: skewX(-20deg);
+  -webkit-transform: skewX(-20deg);
+  transform: skewX(-20deg);
+  display: inline-block;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  background-color: white;
+  color: darkblue;
+  transition: all .25s ease;
+  text-decoration: none;
+}
+.loginBtn:hover{
+  background-color: #D4E2D4;
+  color: darkblue;
 }
