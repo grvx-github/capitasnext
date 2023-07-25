@@ -47,9 +47,8 @@
   color: aliceblue;
 }
 .signUp {
-  background-color: aquamarine;
+  background-color: #2f3e6583;
   padding: 0.5rem 1rem;
-  border-radius: 10px;
   transition: 0.2s ease;
   border: none;
 }

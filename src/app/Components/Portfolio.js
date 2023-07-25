@@ -1,21 +1,13 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import PortfolioData from "../portfolioData";
 import { sliderSettings } from "../common";
-import Image  from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 import styles from "@/app/styles/portfolio.module.css"
 
-
 export const Portfolio = () => {
-	// useEffect(() => {
-	//   new Swiper(".swiper-container", {
-	//     // Customize Swiper options here
-	//     slidesPerView: "auto",
-	//     spaceBetween: 20,
-	//   });
-	// }, []);
 
 	return (
 		// <div className={styles.pWrapper}>
@@ -29,7 +21,7 @@ export const Portfolio = () => {
 		// 							<div className={`${styles.pCard} col-lg-4 col-sm-12`}>
 		// 								<div className="card">
 		// 									<div className="card-img-top">
-		// 										<Image className={styles.cardImg}  src={card.img} alt="" width={1000} height={1000} />
+		// 										<Image className={styles.cardImg} src={card.img} alt="" width={1000} height={1000} />
 		// 									</div>
 		// 									<div className="card-body">
 		// 										<h4 className="card-title">{card.title}</h4>
@@ -50,8 +42,8 @@ export const Portfolio = () => {
 		// 		</div>
 		// 	</div>
 		// </div>
-		<div>Hello</div>
-		
+		<div>HEllo</div>
+
 	);
 };
 
