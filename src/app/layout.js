@@ -13,8 +13,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        {children}
+        <div className="bodyWrapper">{children}</div>
       </body>
     </html>
-  )
+  );
 }

@@ -1,26 +1,26 @@
-'use client'
+"use client";
 
 import Image from "next/image";
-import styles from "@/app/styles/hero.module.css"
-import { useState, useEffect, useCallback } from "react";
+import styles from "@/app/styles/hero.module.css";
+import { useState, useEffect } from "react";
 
+import { Roboto } from "next/font/google";
+
+const roboto = Roboto({
+  subsets: ["latin"],
+  weight: ["400", "700", "500"],
+});
 
 function Hero() {
+  const [loopNum, setLoopNum] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const toRotate = ["Dreams", "Hopes", "Lives"];
+  const [text, setText] = useState("");
+  const [delta, setDelta] = useState(300);
+  const period = 2000;
 
-	const [loopNum, setLoopNum] = useState(0);
-	const [isDeleting, setIsDeleting] = useState(false);
-	const toRotate = ["Dreams", "Hopes", "Aspirations"];
-	const [text, setText] = useState("");
-	const [delta, setDelta] = useState(300);
-	const period = 2000;
-
-	
-
-
-
-	useEffect(() => {
-
-		const tick = () => {
+  useEffect(() => {
+    const tick = () => {
       let i = loopNum % toRotate.length;
       let fullText = toRotate[i];
       let updatedText = isDeleting
@@ -43,49 +43,49 @@ function Hero() {
       }
     };
 
+    const timer = setTimeout(() => {
+      tick();
+    }, delta);
 
-		const timer = setTimeout(() => {
-			tick();
-		}, delta);
+    return () => {
+      clearTimeout(timer);
+    };
+  }); // Include 'delta' in the dependency array
 
-		return () => {
-			clearTimeout(timer);
-		};
-	}); // Include 'delta' in the dependency array
+  return (
+    <section className={roboto.className}>
+      <section className={styles.heroSection} id="home">
+        <div className={styles.container}>
+          <div className={styles.bannerMain}>
+            <div className={styles.bannerText}>
+              <div className={styles.welcome}>
+                <h2>Welcome to </h2>
+                <Image src="/logo.png" alt="" height={75} width={100} />
+              </div>
+              <div className={styles.headingWrapper}>
+                <div className={styles.heading}>
+                  <h1>BUILDING </h1>
+                  <h1>
+                    <span className={styles.typed}>{text}</span>
+                  </h1>
+                </div>
+              </div>
 
-
-	return (
-		<section className={styles.heroSection} id="home">
-			<div className={styles.container}>
-				<div className={styles.bannerMain}>
-					<div className={styles.bannerText}>
-						<div className={styles.welcome}>
-							<h2>Welcome to </h2>
-							<Image src="/logo.png" alt="" height={75} width={100} />
-						</div>
-
-						<div className={styles.heading}>
-							<h1>BUILDING </h1>
-							<h1>
-								<span className={styles.typed}>{text}</span>
-							</h1>
-						</div>
-
-						<p>Home of Real Estate Investment &amp; Advisory Masters</p>
-						<div className={styles.heroButtons}>
-							<button className={styles.btn1}>
-								<a href="">Read More</a>
-							</button>
-							<button className={styles.btn2}>
-								<a href="#">Apply Now</a>
-							</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		
-	);
+              <p>Home of Real Estate Investment &amp; Advisory Masters</p>
+              <div className={styles.heroButtons}>
+                <button className={styles.btn1}>
+                  <a href="">Read More</a>
+                </button>
+                <button className={styles.btn2}>
+                  <a href="#">Apply Now</a>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+  );
 }
 
 export default Hero;
