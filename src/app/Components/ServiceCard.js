@@ -18,43 +18,44 @@ export const ServiceCard = (props) => {
   }
 
   return (
-    <div className={`col-lg-4 col-sm-12`}>
-      <div className={styles.serviceCard}>
-        <div
-          className={styles.serviceCardItem}
-          onMouseOver={handleMouseOver}
-          style={{ backgroundColor: bgColor }}
-          onMouseOut={handleMouseOut}
-        >
-          <div
-            className={styles.serviceCardIcon}
-            style={{ backgroundColor: bgColor }}
-          >
-            <Image
-              className={styles.hoverIcon}
-              src={props.hiddenIcon}
-              alt=""
-              height={50}
-              width={50}
-            />
-            <Image src={props.icon} alt="" height={50} width={50} />
-          </div>
-          <div className={styles.cardContent}>
-            <div className={styles.title}>
-              <h3>{props.title}</h3>
-            </div>
-            <div className="content">
-              <p>{props.content}</p>
-            </div>
-            <div className={styles.vmBtn}>
-              <button className="btn2" style={{background: btnBg}}>
-                <Link href="">READ MORE</Link>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <div>hello</div>
+    // <div className={`col-lg-4 col-sm-12`}>
+    //   <div className={styles.serviceCard}>
+    //     <div
+    //       className={styles.serviceCardItem}
+    //       onMouseOver={handleMouseOver}
+    //       style={{ backgroundColor: bgColor }}
+    //       onMouseOut={handleMouseOut}
+    //     >
+    //       <div
+    //         className={styles.serviceCardIcon}
+    //         style={{ backgroundColor: bgColor }}
+    //       >
+    //         <Image
+    //           className={styles.hoverIcon}
+    //           src={props.hiddenIcon}
+    //           alt=""
+    //           height={50}
+    //           width={50}
+    //         />
+    //         <Image src={props.icon} alt="" height={50} width={50} />
+    //       </div>
+    //       <div className={styles.cardContent}>
+    //         <div className={styles.title}>
+    //           <h3>{props.title}</h3>
+    //         </div>
+    //         <div className="content">
+    //           <p>{props.content}</p>
+    //         </div>
+    //         <div className={styles.vmBtn}>
+    //           <button className="btn2" style={{background: btnBg}}>
+    //             <Link href="">READ MORE</Link>
+    //           </button>
+    //         </div>
+    //       </div>
+    //     </div>
+    //   </div>
+    // </div>
   );
 };
 

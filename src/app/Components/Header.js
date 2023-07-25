@@ -25,7 +25,7 @@ const Header = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-	return (
+  return (
     <div className={styles.headerWrappper}>
       <div className={styles.nav} style={{ backgroundColor: navbarBgColor }}>
         <div className={styles.logo}>

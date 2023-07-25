@@ -24,7 +24,7 @@
   display: none;
 }
 .serviceCardItem:hover{
-  background-color: #0b2464;
+  opacity: 0.1;
   color: antiquewhite;
 }
 .serviceCardItem:hover .cardContent{

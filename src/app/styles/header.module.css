@@ -1,10 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
 .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: fixed;
   width: 100%;
-  padding: 1rem 2rem;
+  padding: 1rem 2rem 1rem 4rem;
   z-index: 5000;
   transition: all 0.2s ease-in;
 }
@@ -38,7 +40,6 @@
   column-gap: 2rem;
   padding-right: 3rem;
   align-items: center;
-  
 }
 
 .socials a {
