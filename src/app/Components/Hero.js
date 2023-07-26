@@ -3,18 +3,6 @@
 import Image from "next/image";
 import styles from "@/app/styles/hero.module.css";
 import { useState, useEffect } from "react";
-import localFont from 'next/font/local';
-
-const formula = localFont({
-  src: [
-
-    {
-      path: "../../../public/FORMULA1-REGULAR.OTF",
-      weight: 400
-    }
-  ],
-  variable: "--font-formula"
-})
 
 function Hero() {
   const [loopNum, setLoopNum] = useState(0);
@@ -59,8 +47,6 @@ function Hero() {
 
   return (
 
-    <main className={formula.className}>
-
       <section className={styles.heroSection} id="home">
         <div className={styles.container}>
           <div className={styles.bannerMain}>
@@ -93,7 +79,6 @@ function Hero() {
           </div>
         </div>
       </section>
-    </main>
 
   );
 }

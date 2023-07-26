@@ -9,7 +9,7 @@ const About = () => {
         <div className="row">
           <div className=" row col-lg-6 col-md-12 mx-2">
             <div className={styles.aboutContent}>
-              <h2>Capitas</h2>
+              <h2 className="formula mb-4">Zerror Studios</h2>
               <p>
                 Capitas is a specialized international real estate and
                 investment advisory firm that works with a select network of
@@ -25,12 +25,10 @@ const About = () => {
                 solutions, and return driven results.
               </p>
               <div className={styles.statement}>
-                <div className={styles.teamEx}>
-                  <h4>
-                    70+ <span>YEARS</span>
-                  </h4>
-                  <p>COMBINED TEAM EXPERIENCE</p>
-                </div>
+                <button className={`formula ${styles.aboutUs}`}>
+                  About Us
+                </button>
+
               </div>
               <div className={styles.aboutCounter}>
                 <div className="row justify-content-center">
