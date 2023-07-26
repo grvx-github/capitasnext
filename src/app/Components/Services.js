@@ -8,6 +8,7 @@ export const Services = () => {
 
 	return (
 		<div className={styles.servicesSection}>
+			<h3 className={styles.serviceHead}>WHAT WE DO</h3>
 			<div className={`container-fluid`}>
 				<div className={`${styles.serviceRow} row`}>
 					{cardDetails.map((entry, index) => (

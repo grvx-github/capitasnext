@@ -15,11 +15,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex: 1 0 52%;
-  margin-left: auto;
+  flex: 1 0 50%;
+  margin-left: 3%;
 }
 .logo{
   flex: 1 0 10%;
+}
+.logo img{
+  width: 100%;
 }
 .header .socials{
   flex: 1 0 30%;
@@ -43,7 +46,7 @@
 .socials {
   display: flex;
   column-gap: 2rem;
-  padding-right: 3rem;
+  padding-right: 2rem;
   align-items: center;
 }
 .socials>a{

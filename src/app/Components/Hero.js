@@ -3,20 +3,25 @@
 import Image from "next/image";
 import styles from "@/app/styles/hero.module.css";
 import { useState, useEffect } from "react";
+import localFont from 'next/font/local';
 
-import { Roboto } from "next/font/google";
+const formula = localFont({
+  src: [
 
-const roboto = Roboto({
-  subsets: ["latin"],
-  weight: ["400", "700", "500"],
-});
+    {
+      path: "../../../public/FORMULA1-REGULAR.OTF",
+      weight: 400
+    }
+  ],
+  variable: "--font-formula"
+})
 
 function Hero() {
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const toRotate = ["Dreams", "Hopes", "Lives"];
   const [text, setText] = useState("");
-  const [delta, setDelta] = useState(300);
+  const [delta, setDelta] = useState(100);
   const period = 2000;
 
   useEffect(() => {
@@ -53,7 +58,9 @@ function Hero() {
   }); // Include 'delta' in the dependency array
 
   return (
-    <section className={roboto.className}>
+
+    <main className={formula.className}>
+
       <section className={styles.heroSection} id="home">
         <div className={styles.container}>
           <div className={styles.bannerMain}>
@@ -62,6 +69,9 @@ function Hero() {
                 <h2>Welcome to </h2>
                 <Image src="/logo.png" alt="" height={75} width={100} />
               </div>
+
+
+              <p>Home of Real Estate Investment &amp; Advisory Masters</p>
               <div className={styles.headingWrapper}>
                 <div className={styles.heading}>
                   <h1>BUILDING </h1>
@@ -71,20 +81,20 @@ function Hero() {
                 </div>
               </div>
 
-              <p>Home of Real Estate Investment &amp; Advisory Masters</p>
-              <div className={styles.heroButtons}>
-                <button className={styles.btn1}>
-                  <a href="">Read More</a>
-                </button>
-                <button className={styles.btn2}>
-                  <a href="#">Apply Now</a>
-                </button>
-              </div>
+            </div>
+            <div className={styles.heroButtons}>
+              <button className={styles.btn1}>
+                <a href="">Read More</a>
+              </button>
+              <button className={styles.btn2}>
+                <a href="#">Apply Now</a>
+              </button>
             </div>
           </div>
         </div>
       </section>
-    </section>
+    </main>
+
   );
 }
 

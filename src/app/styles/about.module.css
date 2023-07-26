@@ -3,8 +3,10 @@
   color: aliceblue;
   position: relative;
   z-index: 1;
-  padding: 4rem 0 4rem 2rem;
+  padding: 2.5rem 0 4rem 2rem;
   overflow: hidden;
+  transform-style: preserve-3d;
+  transform: translateZ(0px)scale(1);
 }
 .aboutSection::before {
   position: absolute;
@@ -20,6 +22,12 @@
   max-width: 680px;
   margin: auto;
 }
+.aboutContent p{
+  font-size: 1.1rem;
+}
+.aboutContent h2{
+  font-size: 3rem;
+}
 .aboutImg {
   background-image: url(../../../public/aboutImg.png);
   background-position: center center;
@@ -29,7 +37,7 @@
   width: 100%;
   margin-left: 35px;
   border-radius: 10px 0 0 10px;
-  margin-top: 4rem;
+  margin-top: 5rem;
 }
 .statement {
   position: relative;
@@ -53,7 +61,7 @@
 }
 .aboutCounter {
   position: relative;
-  top: 2.5rem;
+  top: 3rem;
 }
 .counterCard {
   position: relative;
@@ -68,10 +76,11 @@
   position: absolute;
 }
 .counterCard h3 span {
-  font-size: 1rem;
+  font-size: 0.85rem;
   display: block;
   text-align: center;
   font-weight: 500;
+  margin-top: 3.4rem;
 }
 .counterCard p {
   font-size: 1rem;
@@ -79,7 +88,8 @@
   margin-bottom: 0;
   font-weight: 500;
   padding-left: 85px;
-  padding-top: 10px px;
+  padding-top: 8px;
+  margin-top: 8px;
 }
 .aboutSection::after {
   position: absolute;
