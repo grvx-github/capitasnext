@@ -3,6 +3,7 @@ import Link from "next/link";
 import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
 import styles from "@/app/styles/footer.module.css";
 
+
 const Footer = () => {
   return (
     <div className={styles.footer}>
@@ -49,40 +50,41 @@ const Footer = () => {
             </ul>
             <div className="copyright">
               <p className="t-muted">
-                © <span className="formula">zerror.</span> All Rights Reserved 2023.
+                © <span className="formula">zerror.</span> All Rights Reserved
+                2023.
               </p>
             </div>
           </div>
-          <div className="col-lg-6 col-sm-12">
+          <div className={`col-lg-6 col-sm-12 ${styles.footerRight}`}>
             <h3>Get in Touch</h3>
             <div className="container-fluid">
               <form>
                 <div className="row">
-                  <div className="col-lg-6">
+                  <div className={`col-lg-6 ${styles.formDiv}`}>
                     <label>
                       First Name:
                       <input type="text" name="fName" />
                     </label>
                   </div>
-                  <div className="col-lg-6">
+                  <div className={`col-lg-6 ${styles.formDiv}`}>
                     <label>
                       Last Name:
                       <input type="text" name="lName" />
                     </label>
                   </div>
-                  <div className="col-lg-6">
+                  <div className={`col-lg-6 ${styles.formDiv}` }>
                     <label>
                       Email:
                       <input type="text" name="email" />
                     </label>
                   </div>
-                  <div className="col-lg-6">
+                  <div className={`col-lg-6 ${styles.formDiv}` }>
                     <label>
                       Phone Number:
                       <input type="text" name="pNumber" />
                     </label>
                   </div>
-                  <div className="col-lg-12">
+                  <div className={`col-lg-12 ${styles.formDiv}`}>
                     <label>
                       Message:
                       <textarea name="message" />

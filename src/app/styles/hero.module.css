@@ -120,15 +120,14 @@
   text-transform: uppercase;
 }
 .btn2 {
-  background: linear-gradient(90deg, #071952 100%, #071952 50%) var(--_p, 50%) /
+  background: linear-gradient(90deg, #2f3e65d6 100%, #2f3e65d6 50%) var(--_p, 50%) /
     200%;
-  border: 1px solid #071952;
+  border: 1px solid #2f3e65a8;
   padding: 0.5rem 1.5rem;
   color: #fff;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-in-out;
   transform: skew(-20deg);
 }
 .btn2:hover {
-  --_p: 100%;
-  scale: 1.05;
+  background-color: #2f3e65;
 }

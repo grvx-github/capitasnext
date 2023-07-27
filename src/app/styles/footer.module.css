@@ -33,3 +33,18 @@
 .footerLeft{
 	padding: 0 6rem 0 1rem;
 }
+.footerRight{
+	padding: 0 0 0 4rem;
+}
+.footerRight h3{
+	font-size: 3rem;
+	font-family: roboto;
+}
+.formDiv label{
+	display: flex;
+	flex-direction: column;
+	color: #d2d6e1b6;
+}
+.formDiv label >input{
+	margin-block: 0.5rem;
+}

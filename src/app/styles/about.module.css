@@ -1,6 +1,6 @@
 .aboutSection {
-  background-color: rgba(47, 62, 101);
-  color: aliceblue;
+  background: linear-gradient(180deg, #eaeaea 0%, #ffffff 100%);
+  color: #2c2e43;
   position: relative;
   z-index: 1;
   padding: 2.5rem 0 4rem 2rem;
@@ -8,26 +8,15 @@
   transform-style: preserve-3d;
   transform: translateZ(0px) scale(1);
 }
-.aboutSection::before {
-  position: absolute;
-  content: "";
-  width: 250px;
-  height: 100%;
-  background-color: #fff;
-  right: 0;
-  top: 0;
-  z-index: -1;
-}
 .aboutContent {
   max-width: 680px;
   margin: auto;
 }
-.aboutContent p {
-  font-size: 1.1rem;
+
+.aboutContent p{
+  text-align: justify;
 }
-.aboutContent h2 {
-  font-size: 3rem;
-}
+
 .aboutImg {
   background-image: url(../../../public/aboutImg.png);
   background-position: center center;
@@ -57,7 +46,7 @@
 }
 .aboutCounter {
   position: relative;
-  top: 3rem;
+  top: 1.25rem;
 }
 .counterCard {
   position: relative;
@@ -86,12 +75,6 @@
   padding-left: 85px;
   padding-top: 8px;
   margin-top: 8px;
-}
-.statement {
-  position: relative;
-  width: max-content;
-  margin: auto;
-  margin-top: 4rem;
 }
 .aboutSection::after {
   position: absolute;

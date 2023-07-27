@@ -7,10 +7,11 @@ import About from './Components/About';
 import Services from './Components/Services';
 import Footer from './Components/Footer';
 
-import { Roboto_Flex } from "next/font/google"
+import { Roboto_Condensed } from "next/font/google"
 
-const roboto = Roboto_Flex({
-  subsets: ['latin']
+const roboto = Roboto_Condensed({
+  subsets: ['latin'],
+  weight: ['300', '400', '700']
 })
 
 export default function Home() {
