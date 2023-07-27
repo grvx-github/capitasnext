@@ -2,9 +2,11 @@
 
 import Image from "next/image";
 import styles from "@/app/styles/hero.module.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import { gsap } from "gsap";
 
 function Hero() {
+  const welRef = useRef(null);
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const toRotate = ["Dreams", "Hopes", "Lives"];
@@ -40,18 +42,20 @@ function Hero() {
       tick();
     }, delta);
 
+    const el = welRef.current;
+    gsap.fromTo(el, {y:-100, opacity: 0}, {y:0, opacity:1, duration: 1,  ease: 'in', repeat: false})
+
     return () => {
       clearTimeout(timer);
     };
   }); // Include 'delta' in the dependency array
 
   return (
-
       <section className={styles.heroSection} id="home">
         <div className={styles.container}>
           <div className={styles.bannerMain}>
             <div className={styles.bannerText}>
-              <div className={styles.welcome}>
+              <div className={styles.welcome} ref={welRef}>
                 <h2>Welcome to </h2>
                 <Image src="/logo.png" alt="" height={75} width={100} />
               </div>

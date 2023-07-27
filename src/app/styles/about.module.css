@@ -29,7 +29,9 @@
   margin-top: 5rem;
   padding: 1rem;
   transform-style: preserve-3d;
+  position: relative;
 }
+
 .teamEx {
   text-align: center;
   color: azure;

@@ -11,7 +11,7 @@ const About = () => {
   const divRef = useRef(null);
   useEffect(() => {
     const el = divRef.current;
-    gsap.fromTo(el, { xPercent: 100, opacity: 0 }, { xPercent: 0, opacity:1, duration: 1.5, ease: "power1.inOut"})
+    gsap.fromTo(el, { xPercent: 100, opacity: 0 }, { xPercent: 0, opacity:1, duration: 1.5, delay: 1, ease: "power1.inOut"})
   })
   return (
 
