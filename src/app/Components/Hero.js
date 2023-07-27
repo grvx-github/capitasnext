@@ -7,6 +7,9 @@ import { gsap } from "gsap";
 
 function Hero() {
   const welRef = useRef(null);
+  const desRef = useRef(null);
+  const typRef = useRef(null);
+  const BtnRef = useRef(null);
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const toRotate = ["Dreams", "Hopes", "Lives"];
@@ -42,13 +45,18 @@ function Hero() {
       tick();
     }, delta);
 
-    const el = welRef.current;
-    gsap.fromTo(el, {y:-100, opacity: 0}, {y:0, opacity:1, duration: 1,  ease: 'in', repeat: false})
-
     return () => {
       clearTimeout(timer);
     };
   }); // Include 'delta' in the dependency array
+
+  useEffect(() => {
+    const tl = gsap.timeline();
+    tl.fromTo(welRef.current, {y: 100, opacity: 0.1}, {y:0, opacity: 1, duration: 1, ease: "in"})
+    tl.fromTo(desRef.current, {yPercent: 100, opacity: 0.1}, {yPercent: 0, opacity: 1, duration: 1})
+    tl.fromTo(typRef.current, {opacity: 0}, {opacity:1, duration: 1})
+    tl.fromTo(BtnRef.current, {yPercent: 100}, {yPercent: 0, duration: 1, ease: "in"})
+  })
 
   return (
       <section className={styles.heroSection} id="home">
@@ -61,9 +69,9 @@ function Hero() {
               </div>
 
 
-              <p>Home of Real Estate Investment &amp; Advisory Masters</p>
+              <p ref={desRef}>Home of Real Estate Investment &amp; Advisory Masters</p>
               <div className={styles.headingWrapper}>
-                <div className={styles.heading}>
+                <div className={styles.heading} ref={typRef}>
                   <h1>BUILDING </h1>
                   <h1>
                     <span className={styles.typed}>{text}</span>
@@ -72,7 +80,7 @@ function Hero() {
               </div>
 
             </div>
-            <div className={styles.heroButtons}>
+            <div className={styles.heroButtons} ref={BtnRef}>
               <button className={styles.btn1}>
                 <a href="">Read More</a>
               </button>

@@ -9,9 +9,11 @@ import VisibilitySensor from 'react-visibility-sensor';
 
 const About = () => {
   const divRef = useRef(null);
+  const hiRef = useRef(null)
   useEffect(() => {
-    const el = divRef.current;
-    gsap.fromTo(el, { xPercent: 100, opacity: 0 }, { xPercent: 0, opacity:1, duration: 1.5, delay: 1, ease: "power1.inOut"})
+    const tl = gsap.timeline();
+    tl.fromTo = (hiRef.current, {yPercent: 100, opacity: 0}, {yPercent: 0, opacity:1, duration: 1, ease: "in"})
+    tl.fromTo = (divRef.current,{ xPercent: 100, opacity: 0 }, { xPercent: 0, opacity: 1, duration: 1.5, delay: 1, ease: "power1.inOut" })
   })
   return (
 
@@ -20,7 +22,7 @@ const About = () => {
         <div className="row">
           <div className=" row col-lg-6 col-md-12 mx-2">
             <div className={styles.aboutContent}>
-              <h2 className="formula mb-4">Zerror Studios</h2>
+              <h2 className="formula mb-4" ref={hiRef}>Zerror Studios</h2>
               <p>
                 Capitas is a specialized international real estate and
                 investment advisory firm that works with a select network of
@@ -103,8 +105,8 @@ const About = () => {
                     </div>
 
                   </div>)}
-                
-               </VisibilitySensor>
+
+              </VisibilitySensor>
             </div>
           </div>
           <div className="row col-lg-6 col-md-12" ref={divRef}>
