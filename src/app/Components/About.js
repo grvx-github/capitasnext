@@ -1,10 +1,12 @@
+'use client'
+
 import styles from "@/app/styles/about.module.css";
 import CountUp from 'react-countup'
 
 
 const About = () => {
 	return (
-    <div className={styles.aboutSection}>
+    <div className={`${styles.aboutSection} mt-4`}>
       <div className="container-fluid">
         <div className="row">
           <div className=" row col-lg-6 col-md-12 mx-2">

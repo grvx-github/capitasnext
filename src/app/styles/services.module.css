@@ -4,7 +4,6 @@
 }
 .servicesSection{
   text-align: center;
-
 }
 .serviceHead{
   font-size: 2.5rem;
@@ -24,18 +23,18 @@
   transition: all 0.1s ease-out 0s;
 }
 .serviceCardItem {
-  max-width: 75%;
+  max-width: 85%;
   margin-inline: auto;
-  padding: 2rem;
+  padding: 4.5rem 2rem;
   transition: all 0.2s ease ;
 }
 .hiddenIcon{
   display: none;
 }
 .serviceCardItem:hover{
-  opacity: 0.1;
-  color: antiquewhite;
+  color: white;
 }
+
 .serviceCardItem:hover .cardContent{
   transform: scale(1.1);}
 .serviceCardItem>img{
@@ -48,10 +47,7 @@
   display: block;
   transition: all .2s ease;
 }
-.serviceCardItem:hover .btn2{
-  border: white;
-  background-color: white;
-}
+
 .serviceCardIcon {
   font-size: 50px;
   color: #6f7173;
@@ -68,8 +64,11 @@
   -ms-transform: translateX(-50%);
   -o-transform: translateX(-50%);
   transform: translateX(-50%);
+  transition: 0.2s ease;
 }
-
+.serviceCardItem:hover .serviceCardIcon{
+  border: 1px solid white;
+}
 .serviceCardIcon > img {
   position: absolute;
   left: 50%;

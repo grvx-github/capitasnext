@@ -26,6 +26,10 @@ body{
   --_p: 100%;
   scale: 1.05;
 }
+.serviceCardItem:hover .btn2{
+  border:1px solid white;
+  background: white;
+}
 
 button a {
   color: inherit;
@@ -50,4 +54,59 @@ li>a{
 }
 .mb-4{
   margin-bottom: 4rem;
+}
+.mt-4{
+  position: relative;
+  top: 4rem;
+}
+
+/* Aboout Page */
+.aboutHeader{
+  background: url(/aboutBg.jpg);
+  background-size: cover;
+  min-height: 90vh;
+  position: relative;
+}
+.aboutMain{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  margin-inline: auto;
+  color: white;
+  align-items: center;
+}
+.aboutMain h2{
+  font-family: formula;
+  font-weight: 600;
+  word-spacing: 0.5rem;
+  font-size: 3rem;
+}
+.aboutMainLeft p{
+  width: 70%;
+  margin-right: auto;
+  font-size: 1.4rem;
+  margin-top: 3rem;
+}
+.runner {
+  display: flex;
+  align-items: center;
+  font-family: formula;
+  gap: 0.5rem;
+  justify-content: center;
+}
+.aboutMain .d-flex{
+  gap: 4rem;
+}
+.counter{
+  display: flex;
+  flex-direction: column;
+}
+
+.counter h4{
+  font-size: 1.5rem;
+}
+.t-muted{
+  color: #6c757d!important;
 }

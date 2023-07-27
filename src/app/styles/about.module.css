@@ -1,5 +1,5 @@
 .aboutSection {
-  background: #2f3e65;
+  background-color: rgba(47, 62, 101);
   color: aliceblue;
   position: relative;
   z-index: 1;
@@ -36,8 +36,10 @@
   height: 100%;
   width: 100%;
   margin-left: 35px;
-  border-radius: 10px 0 0 10px;
+  border-radius: 10px;
   margin-top: 5rem;
+  padding: 1rem;
+  transform-style: preserve-3d;
 }
 .teamEx {
   text-align: center;

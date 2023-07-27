@@ -6,26 +6,28 @@ import { useState } from "react";
 export const ServiceCard = (props) => {
   const [bgColor, setBgColor] = useState("white");
   const [btnBg, setBtnBg] = useState("block");
+  const [dp, setDp] = useState("block");
 
-  function handleMouseOver() {
-    setBgColor("#0b2464");
-		setBtnBg("#35426453");
+  function handleMouseEnter() {
+    setBgColor("#2f3e65");
+		setBtnBg("white");
+    setDp("none");
   }
 
-  function handleMouseOut() {
+  function handleMouseLeave() {
     setBgColor("white");
-		setBtnBg("linear-gradient(90deg, #0b2464 100%, #0b2464 50%) var(--_p, 50%)")
+		setBtnBg("linear-gradient(90deg, #0b2464 100%, #0b2464 50%) var(--_p, 50%)");
+    setDp("block")
   }
 
   return (
-
     <div className={`col-lg-4 col-sm-12`}>
       <div className={styles.serviceCard}>
         <div
           className={styles.serviceCardItem}
-          onMouseOver={handleMouseOver}
+          onMouseEnter={handleMouseEnter}
           style={{ backgroundColor: bgColor }}
-          onMouseOut={handleMouseOut}
+          onMouseLeave={handleMouseLeave}
         >
           <div
             className={styles.serviceCardIcon}
@@ -38,17 +40,26 @@ export const ServiceCard = (props) => {
               height={50}
               width={50}
             />
-            <Image src={props.icon} alt="" height={50} width={50} />
+            <Image
+              src={props.icon}
+              style={{ display: dp }}
+              alt=""
+              height={50}
+              width={50}
+            />
           </div>
           <div className={styles.cardContent}>
-            <div className={styles.title}>
+            <div className={`${styles.title} formula`}>
               <h3>{props.title}</h3>
             </div>
             <div className="content">
               <p>{props.content}</p>
             </div>
             <div className={styles.vmBtn}>
-              <button className="btn2" style={{background: btnBg}}>
+              <button
+                className="btn2"
+                style={{ background: btnBg, color: bgColor }}
+              >
                 <Link href="">READ MORE</Link>
               </button>
             </div>
