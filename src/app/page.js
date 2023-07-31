@@ -3,9 +3,11 @@
 import Hero from './Components/Hero';
 import Header from './Components/Header';
 import About from './Components/About';
-// import Portfolio from './Components/Portfolio';
+import Portfolio from './Components/Portfolio';
 import Services from './Components/Services';
 import Footer from './Components/Footer';
+import Features from './Components/Features';
+import Testimonial from './Components/Testimonial';
 
 import { Roboto_Condensed } from "next/font/google"
 
@@ -21,7 +23,9 @@ export default function Home() {
       <Hero />
       <About />
       <Services />
-      
+      <Features />
+      <Testimonial />
+      <Portfolio />
       <Footer />
     </>
 

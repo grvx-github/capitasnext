@@ -1,34 +1,70 @@
 "use client"
 
-import React from "react";
+import Header from "../Components/Header"
+import Footer from "../Components/Footer"
+import { FaQuoteLeft } from "react-icons/fa"
+import Testimonial from "../Components/Testimonial"
 
-import { Swiper } from "swiper/react";
-import { Pagination, Navigation } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/pagination";
-import styles from "@/app/styles/testimonials.module.css";
+ const testimonialsPage = () => {
+	return(
+		<div className="testimonialPage">
+			<Header />
+			<Testimonial />
+			{/* <div className="col-lg-12">
 
-
-const testimonials = () => {
-	return (
-		<div className={styles.tWrapper}>
-			<h1>Success Stories</h1>
-			<Swiper
-				direction={"vertical"}
-				pagination={{
-					clickable: true,
-					// type: 'progressbar'
-				}}
-				slidesPerView={1}
-				loop={true}
-
-				// navigation={true}
-				modules={[Pagination, Navigation]}
-				className="mySwiper"
-			>
-			</Swiper>
 		</div>
-	);
-};
+		<div className="col-lg-4">
+			<div className="card">
+				<div className="card-img-top">
+					<FaQuoteLeft />
+				</div>
+				<div className="card title">
+					<h5></h5>
+				</div>
+				<div className="card-subtitle t-muted">
 
-export default testimonials;
+				</div>
+				<div className="card-text t.muted">
+
+				</div>
+			</div>
+		</div>
+		<div className="col-lg-4">
+			<div className="card">
+				<div className="card-img-top">
+					<FaQuoteLeft />
+				</div>
+				<div className="card title">
+					<h5></h5>
+				</div>
+				<div className="card-subtitle t-muted">
+
+				</div>
+				<div className="card-text">
+
+				</div>
+			</div>
+		</div>
+		<div className="col-lg-4">
+			<div className="card">
+				<div className="card-img-top">
+					<FaQuoteLeft />
+				</div>
+				<div className="card title">
+					<h5></h5>
+				</div>
+				<div className="card-subtitle t-muted">
+
+				</div>
+				<div className="card-text">
+
+				</div>
+			</div>
+		</div> */}
+			<Footer />
+		</div>
+	)
+	
+}
+
+export default testimonialsPage;

@@ -4,6 +4,8 @@ import About from "../Components/About";
 import Header from "../Components/Header";
 import CountUp from "react-countup";
 import { Roboto } from "next/font/google";
+import Features from "../Components/Features";
+import Footer from "../Components/Footer";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -15,15 +17,15 @@ const page = () => {
     <main className={roboto.className}>
       <div className="aboutHeader container-fluid">
         <Header />
-        <div className="aboutMain row">
-          <div className="aboutMainLeft col-lg-6 col-sm-12">
+        <div className="aboutBanner row">
+          <div className="aboutBannerLeft col-lg-6 col-sm-12">
             <h2>Who We Are</h2>
             <p>
               Our mission is to engage in issues that are of concern to
               individuals
             </p>
           </div>
-          <div className="aboutMainRight col-lg-6 col-sm-12">
+          <div className="aboutBannerRight col-lg-6 col-sm-12">
             <div className="d-flex rightdivs">
               <div className="counter">
                 <CountUp start={0} end={19} delay={0}>
@@ -52,6 +54,8 @@ const page = () => {
         </div>
       </div>
       <About />
+      <Features />
+      <Footer />
     </main>
   );
 };

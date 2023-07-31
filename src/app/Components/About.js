@@ -1,28 +1,39 @@
-'use client'
+"use client";
 
 import styles from "@/app/styles/about.module.css";
-import CountUp from 'react-countup'
+import CountUp from "react-countup";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import VisibilitySensor from 'react-visibility-sensor';
-
 
 const About = () => {
   const divRef = useRef(null);
-  const hiRef = useRef(null)
+  const hiRef = useRef(null);
   useEffect(() => {
     const tl = gsap.timeline();
-    tl.fromTo = (hiRef.current, {yPercent: 100, opacity: 0}, {yPercent: 0, opacity:1, duration: 1, ease: "in"})
-    tl.fromTo = (divRef.current,{ xPercent: 100, opacity: 0 }, { xPercent: 0, opacity: 1, duration: 1.5, delay: 1, ease: "power1.inOut" })
-  })
+    tl.fromTo =
+      (hiRef.current,
+        { yPercent: 100, opacity: 0 },
+        { yPercent: 0, opacity: 1, duration: 1, ease: "in" });
+    tl.fromTo =
+      (divRef.current,
+        { xPercent: 100, opacity: 0 },
+      {
+        xPercent: 0,
+        opacity: 1,
+        duration: 1.5,
+        delay: 1,
+        ease: "power1.inOut",
+      });
+  });
   return (
-
     <div className={`${styles.aboutSection} mt-4`}>
       <div className="container-fluid">
         <div className="row">
           <div className=" row col-lg-6 col-md-12 mx-2">
             <div className={styles.aboutContent}>
-              <h2 className="formula mb-4" ref={hiRef}>Zerror Studios</h2>
+              <h2 className="formula mb-4" ref={hiRef}>
+                Zerror Studios
+              </h2>
               <p>
                 Capitas is a specialized international real estate and
                 investment advisory firm that works with a select network of
@@ -41,72 +52,68 @@ const About = () => {
                 <button className={`formula ${styles.aboutUs}`}>
                   About Us
                 </button>
-
               </div>
-              <VisibilitySensor partialVisibility offset={{ bottom: 100 }}>
-                {({ isVisible }) => (
-                  <div className={styles.aboutCounter}>
-                    <div className="row justify-content-center">
-                      <div className="col-lg-4 col-md-4 col-sm-6">
-                        <div className={`${styles.counterCard}`}>
-                          <div className="wrapper" style={{ height: 100 }}>
 
-                            {isVisible ? <CountUp start={0} end={12} delay={0}>
-                              {({ countUpRef }) => (
-                                <div>
-                                  <h3 ref={countUpRef}></h3>
-                                </div>
-                              )}
-                            </CountUp> : null
-                            }
-                            <h3>
-
-                              <span>years of</span>
-                            </h3>
-                          </div>
-                          <p> Company Experience</p>
-                        </div>
+              <div className={styles.aboutCounter}>
+                <div className="row justify-content-center">
+                  <div className="col-lg-4 col-md-4 col-sm-6">
+                    <div className={`${styles.counterCard}`}>
+                      <div className="wrapper" >
+                      
+                          <CountUp start={0} end={12} delay={0}>
+                            {({ countUpRef }) => (
+                              <div>
+                                <h3 ref={countUpRef}></h3>
+                              </div>
+                            )}
+                          </CountUp>
+                   
+                        <h3>
+                          <span>years of</span>
+                        </h3>
                       </div>
-                      <div className="col-lg-4 col-md-4 col-sm-6">
-                        <div className={`${styles.counterCard}`}>
-                          <div className="wrapper">
-                            <CountUp start={0} end={70} delay={0}>
-                              {({ countUpRef }) => (
-                                <div>
-                                  <h3 ref={countUpRef}></h3>
-                                </div>
-                              )}
-                            </CountUp>
-                            <h3>
-                              <span>years of</span>
-                            </h3>
-                          </div>
-                          <p>Combined Team Experience</p>
-                        </div>
-                      </div>
-                      <div className="col-lg-4 col-md-4 col-sm-6">
-                        <div className={`${styles.counterCard}`}>
-                          <div className="wrapper">
-                            <CountUp start={0} end={2} delay={0}>
-                              {({ countUpRef }) => (
-                                <div>
-                                  <h3 $ ref={countUpRef}></h3>
-                                </div>
-                              )}
-                            </CountUp>
-                            <h3>
-                              <span>Billion in</span>
-                            </h3>
-                          </div>
-                          <h3></h3>
-                          <p>Business Transactions</p>
-                        </div>
-                      </div>
+                      <p> Company Experience</p>
                     </div>
+                  </div>
+                  <div className="col-lg-4 col-md-4 col-sm-6">
+                    <div className={`${styles.counterCard}`}>
+                      <div className="wrapper">
+                        <CountUp start={0} end={70} delay={0}>
+                          {({ countUpRef }) => (
+                            <div>
+                              <h3 ref={countUpRef}></h3>
+                            </div>
+                          )}
+                        </CountUp>
+                        <h3>
+                          <span>years of</span>
+                        </h3>
+                      </div>
+                      <p>Combined Team Experience</p>
+                    </div>
+                  </div>
+                  <div className="col-lg-4 col-md-4 col-sm-6">
+                    <div className={`${styles.counterCard}`}>
+                      <div className="wrapper">
+                        <CountUp start={0} end={2} delay={0}>
+                          {({ countUpRef }) => (
+                            <div>
+                              <h3 $ ref={countUpRef}></h3>
+                            </div>
+                          )}
+                        </CountUp>
+                        <h3>
+                          <span>Billion in</span>
+                        </h3>
+                      </div>
+                      <h3></h3>
+                      <p>Business Transactions</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+                
 
-                  </div>)}
-
-              </VisibilitySensor>
             </div>
           </div>
           <div className="row col-lg-6 col-md-12" ref={divRef}>

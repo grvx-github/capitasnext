@@ -5,18 +5,20 @@ import { useState } from "react";
 
 export const ServiceCard = (props) => {
   const [bgColor, setBgColor] = useState("white");
+  const [bgOp, setBgOp] = useState("white")
   const [btnBg, setBtnBg] = useState("block");
   const [dp, setDp] = useState("block");
 
   function handleMouseEnter() {
-    setBgColor("#2f3e65");
+    setBgColor("#2f3e65d6");
 		setBtnBg("white");
     setDp("none");
+    setBgOp("")
   }
 
   function handleMouseLeave() {
     setBgColor("white");
-		setBtnBg("linear-gradient(90deg, #0b2464 100%, #0b2464 50%) var(--_p, 50%)");
+    setBtnBg("linear-gradient(90deg, #2f3e65d6 100%, #2f3e65d6 50%) var(--_p, 50%)");
     setDp("block")
   }
 

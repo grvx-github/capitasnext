@@ -48,49 +48,49 @@ function Hero() {
     return () => {
       clearTimeout(timer);
     };
-  }); // Include 'delta' in the dependency array
+  }); 
 
   useEffect(() => {
     const tl = gsap.timeline();
-    tl.fromTo(welRef.current, {y: 100, opacity: 0.1}, {y:0, opacity: 1, duration: 1, ease: "in"})
-    tl.fromTo(desRef.current, {yPercent: 100, opacity: 0.1}, {yPercent: 0, opacity: 1, duration: 1})
-    tl.fromTo(typRef.current, {opacity: 0}, {opacity:1, duration: 1})
-    tl.fromTo(BtnRef.current, {yPercent: 100}, {yPercent: 0, duration: 1, ease: "in"})
+    tl.fromTo(welRef.current, { y: 100, opacity: 0.1 }, { y: 0, opacity: 1, duration: 1, ease: "in" })
+    tl.fromTo(desRef.current, { yPercent: 100, opacity: 0.1 }, { yPercent: 0, opacity: 1, duration: 1 })
+    tl.fromTo(typRef.current, { opacity: 0 }, { opacity: 1, duration: 1 })
+    tl.fromTo(BtnRef.current, { yPercent: 100 }, { yPercent: 0, duration: 1, ease: "in" })
   })
 
   return (
-      <section className={styles.heroSection} id="home">
-        <div className={styles.container}>
-          <div className={styles.bannerMain}>
-            <div className={styles.bannerText}>
-              <div className={styles.welcome} ref={welRef}>
-                <h2>Welcome to </h2>
-                <Image src="/logo.png" alt="" height={75} width={100} />
-              </div>
-
-
-              <p ref={desRef}>Home of Real Estate Investment &amp; Advisory Masters</p>
-              <div className={styles.headingWrapper}>
-                <div className={styles.heading} ref={typRef}>
-                  <h1>BUILDING </h1>
-                  <h1>
-                    <span className={styles.typed}>{text}</span>
-                  </h1>
-                </div>
-              </div>
-
+    <section className={styles.heroSection} id="home">
+      <div className={styles.container}>
+        <div className={styles.bannerMain}>
+          <div className={styles.bannerText}>
+            <div className={styles.welcome} ref={welRef}>
+              <h2>Welcome to </h2>
+              <Image src="/logo.png" alt="" height={75} width={100} />
             </div>
-            <div className={styles.heroButtons} ref={BtnRef}>
-              <button className={styles.btn1}>
-                <a href="">Read More</a>
-              </button>
-              <button className={styles.btn2}>
-                <a href="#">Apply Now</a>
-              </button>
+
+
+            <p ref={desRef}>Home of Real Estate Investment &amp; Advisory Masters</p>
+            <div className={styles.headingWrapper}>
+              <div className={styles.heading} ref={typRef}>
+                <h1>BUILDING </h1>
+                <h1>
+                  <span className={styles.typed}>{text}</span>
+                </h1>
+              </div>
             </div>
+
+          </div>
+          <div className={styles.heroButtons} ref={BtnRef}>
+            <button className={styles.btn1}>
+              <a href="">Read More</a>
+            </button>
+            <button className={styles.btn2}>
+              <a href="#">Apply Now</a>
+            </button>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
   );
 }

@@ -1,23 +1,64 @@
-.tWrapper {
-  background-image: url(../../../public/testiBg.jpg);
-  height: 30rem;
+.testimonialsMain {
+  padding: 4rem 2.5rem;
+  margin-top: 4rem;
+}
+.tBodySection {
   padding: 2rem 4rem;
 }
-.testimonial {
-  padding: 4rem 2rem;
-  max-width: 70%;
-  margin: auto;
+.testi {
+  width: 400px;
+  grid-column-gap: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  align-items: center;
+  padding: 20px;
+  display: flex;
+  box-shadow: 0 -20px 50px rgba(0, 43, 86, 0.1);
+  opacity: 1;
+  transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg)
+    rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+  transform-style: preserve-3d;
 }
-.testimonial,
-.tWrapper h1 {
-  color: #fff;
+.testiWrapper {
+  row-gap: 2rem;
 }
-.testimonial .personDetails {
+.bottomL{
+  row-gap: 2rem;
+  flex-direction: column;
+}
+.testiImg img{
+  border-radius: 5px;
+  overflow: hidden;
+}
+.testiText h5{
+  margin-block: 0.5rem;
+  font-weight: 400;
+  font-size: 1.25rem;
+}
+.testiText h6{
+  color: #61677A;
+}
+.bottomR h3{
+  text-transform:none;
+  color: #2c2e43;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 4rem;
+  margin-block: 0.5rem;
+}
+.bottomR h3 span{
+  text-transform: capitalize;
+}
+.navBtns{
   display: flex;
   gap: 1rem;
-  align-items: center;
-  margin-bottom: 1rem;
 }
-.testimonial .testi {
-  font-size: 1.2rem;
+
+.slidePrevBtn, .slideNextBtn{
+  padding: 0.5rem 1rem;
+  background-color: #61677A ;
+  color: white;
+  border: none;
+  border-radius: 2.5px;
+
 }

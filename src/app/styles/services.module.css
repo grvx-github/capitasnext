@@ -1,6 +1,10 @@
 .servicesSection {
   padding-top: 8rem;
   margin-top: 2rem;
+  background: url('/banner.png');
+  background-position: cover;
+  transform-style: preserve-3d;
+  transform: translateZ(-90px)scale(1.9);
 }
 .servicesSection{
   text-align: center;
@@ -9,6 +13,7 @@
   font-size: 2.5rem;
   font-weight: 800;
   margin-bottom: 3rem;
+  color: white;
 }
 .serviceRow {
   justify-content: center;
@@ -50,14 +55,14 @@
 
 .serviceCardIcon {
   font-size: 50px;
-  color: #6f7173;
+  color: #6683ccec;
   position: absolute;
   top: 5px;
   left: 50%;
   z-index: 999;
   width: 100px;
   height: 100px;
-  border: 1px solid #0b2464;
+  border: 1px solid #6783cc;
   border-radius: 100%;
   -webkit-transform: translateX(-50%);
   -moz-transform: translateX(-50%);
