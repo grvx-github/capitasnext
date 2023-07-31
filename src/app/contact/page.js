@@ -1,5 +1,7 @@
-import Header from "../Components/Header";
+'use client'
 
+import Header from "../Components/Header";
+import InnerBanner from "../Components/InnerBanner";
 import Contact from '../Components/Contact'
 import Footer from "../Components/Footer";
 import style from "@/app/styles/contact.module.css"
@@ -7,9 +9,12 @@ import style from "@/app/styles/contact.module.css"
 export const ContactPage = () =>{
 	return(
 		<div className="contactsPage">
-			<div className="contactsBanner">
-				<Header />
-				
+			
+				<div className="innerHeader">
+					<Header />
+					<InnerBanner />
+				</div>
+			<div className="contactsBanner" >
 				<div className={style.bannerMain}>
 					<h2>
 						Contact Us

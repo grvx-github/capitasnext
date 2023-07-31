@@ -1,13 +1,32 @@
+'use client'
+
 import Header from "../Components/Header";
 import Services from "../Components/Services";
 import Footer from "../Components/Footer";
+import InnerBanner from "../Components/InnerBanner";
 
 
 const servicePage = () => {
-	<>
-		<Header />
-		<Services />
-		{/* <div className="servicesMain">
+	return(
+		<div className="servicePage">
+			<div className="innerHeader">
+				<Header />
+				<InnerBanner />
+			</div>
+
+			<Services />
+
+			<Footer />
+		</div>
+		
+		
+	)
+	
+}
+
+export default servicePage;
+
+{/* <div className="servicesMain">
 			<div className="container-fluid">
 				<div className="row">
 					<div className="col-lg-6 col-sm-12">
@@ -71,8 +90,3 @@ const servicePage = () => {
 				</div>
 			</div>
 		</div> */}
-		<Footer />
-	</>
-}
-
-export default servicePage;

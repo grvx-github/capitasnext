@@ -4,16 +4,22 @@ import Header from "../Components/Header"
 import Footer from "../Components/Footer"
 import { FaQuoteLeft } from "react-icons/fa"
 import Testimonial from "../Components/Testimonial"
+import InnerBanner from "../Components/InnerBanner"
 
  const testimonialsPage = () => {
 	return(
 		<div className="testimonialPage">
-			<Header />
+			<div className="innerHeader">
+				<Header />
+				<InnerBanner />
+			</div>
+			
 			<Testimonial />
-			{/* <div className="col-lg-12">
 
-		</div>
-		<div className="col-lg-4">
+			{/* <div className="col-lg-12">
+	
+			</div>
+			<div className="col-lg-4">
 			<div className="card">
 				<div className="card-img-top">
 					<FaQuoteLeft />
@@ -28,8 +34,8 @@ import Testimonial from "../Components/Testimonial"
 
 				</div>
 			</div>
-		</div>
-		<div className="col-lg-4">
+				</div>
+				<div className="col-lg-4">
 			<div className="card">
 				<div className="card-img-top">
 					<FaQuoteLeft />
@@ -44,8 +50,8 @@ import Testimonial from "../Components/Testimonial"
 
 				</div>
 			</div>
-		</div>
-		<div className="col-lg-4">
+				</div>
+				<div className="col-lg-4">
 			<div className="card">
 				<div className="card-img-top">
 					<FaQuoteLeft />
@@ -60,7 +66,7 @@ import Testimonial from "../Components/Testimonial"
 
 				</div>
 			</div>
-		</div> */}
+				</div> */}
 			<Footer />
 		</div>
 	)

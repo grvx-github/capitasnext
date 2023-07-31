@@ -79,13 +79,13 @@ li > a {
 }
 
 /* Aboout Page */
-.aboutHeader {
+.innerHeader {
   background: url(/aboutBg.jpg);
   background-size: cover;
   min-height: 90vh;
   position: relative;
 }
-.aboutBanner {
+.innerBanner {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -95,13 +95,13 @@ li > a {
   color: white;
   align-items: center;
 }
-.aboutBanner h2 {
+.innerBanner h2 {
   font-family: formula;
   font-weight: 600;
   word-spacing: 0.5rem;
   font-size: 3rem;
 }
-.aboutBannerLeft p {
+.innerBannerLeft p {
   width: 70%;
   margin-right: auto;
   font-size: 1.4rem;
@@ -114,7 +114,7 @@ li > a {
   gap: 0.5rem;
   justify-content: center;
 }
-.aboutBanner .d-flex {
+.innerBanner .d-flex {
   gap: 4rem;
 }
 .counter {
@@ -133,3 +133,11 @@ li > a {
   position: relative;
 }
 
+.servicePage .servicesSection{
+  transform-style:flat;
+  transform: translateZ(0)scale(1);
+  padding-top: 2rem;
+}
+.servicePage .serviceHead{
+  color: #0b2464;
+}
