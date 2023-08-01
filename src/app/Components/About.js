@@ -2,29 +2,32 @@
 
 import styles from "@/app/styles/about.module.css";
 import CountUp from "react-countup";
-import { useEffect, useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
 
 const About = () => {
   const divRef = useRef(null);
   const hiRef = useRef(null);
-  useEffect(() => {
-    const tl = gsap.timeline();
-    tl.fromTo =
-      (hiRef.current,
-        { yPercent: 100, opacity: 0 },
-        { yPercent: 0, opacity: 1, duration: 1, ease: "in" });
-    tl.fromTo =
-      (divRef.current,
-        { xPercent: 100, opacity: 0 },
-      {
-        xPercent: 0,
-        opacity: 1,
-        duration: 1.5,
-        delay: 1,
-        ease: "power1.inOut",
-      });
-  });
+  const xRef = useRef()
+  const pRef = useRef()
+  const lRef = useRef()
+  const tl = useRef();
+  useLayoutEffect(() => {
+    let ctx = gsap.context(() => {
+      tl.current && tl.current.progress(0).kill()
+      tl.current = gsap.timeline()
+        .fromTo(hiRef.current, { yPercent: -2, z: 2, opacity: 0 }, { yPercent: 0, z: 0, opacity: 1, duration: 0.7, ease: "in" })
+        .fromTo(xRef.current, { xPercent: -10, opacity: 0 }, { xPercent: 0, opacity: 1, duration: 0.7, ease: "in" })
+        .fromTo(pRef.current, { xPercent: -10, opacity: 0 }, { xPercent: 0, opacity: 1, duration: 0.7, ease: "in" })
+        .fromTo(lRef.current, { xPercent: -10, opacity: 0 }, { xPercent: 0, opacity: 1, duration: 0.7, ease: "in" })
+        .fromTo(divRef.current, { xPercent: 10, opacity: 0 }, { xPercent: 0, opacity: 1, duration: 0.7, delay: 0.2, ease: "inOut" })
+        
+    }, hiRef);
+
+    return () => ctx.revert();
+
+  }, [])
+
   return (
     <div className={`${styles.aboutSection} mt-4`}>
       <div className="container-fluid">
@@ -34,40 +37,43 @@ const About = () => {
               <h2 className="formula mb-4" ref={hiRef}>
                 Zerror Studios
               </h2>
-              <p>
-                Capitas is a specialized international real estate and
-                investment advisory firm that works with a select network of
-                private and institutional capital partners in the areas of real
-                estate acquisition, development management, asset management
-                advisory, and strategic cross border transactions.
-              </p>
-              <p>
-                Led by a senior management team with over 70 years of
-                experience, and 7 independent financial and real estate
-                platforms launched in the Americas and MENA region, Capitas
-                carries a reputation for successful execution, innovative
-                solutions, and return driven results.
-              </p>
-              <div className={styles.statement}>
+              <div ref={xRef}>
+                <p>
+                  Capitas is a specialized international real estate and
+                  investment advisory firm that works with a select network of
+                  private and institutional capital partners in the areas of real
+                  estate acquisition, development management, asset management
+                  advisory, and strategic cross border transactions.
+                </p>
+                <p>
+                  Led by a senior management team with over 70 years of
+                  experience, and 7 independent financial and real estate
+                  platforms launched in the Americas and MENA region, Capitas
+                  carries a reputation for successful execution, innovative
+                  solutions, and return driven results.
+                </p>
+              </div>
+
+              <div className={styles.statement} ref={pRef}>
                 <button className={`formula ${styles.aboutUs}`}>
                   About Us
                 </button>
               </div>
 
-              <div className={styles.aboutCounter}>
+              <div className={styles.aboutCounter} ref={lRef}>
                 <div className="row justify-content-center">
                   <div className="col-lg-4 col-md-4 col-sm-6">
                     <div className={`${styles.counterCard}`}>
                       <div className="wrapper" >
-                      
-                          <CountUp start={0} end={12} delay={0}>
-                            {({ countUpRef }) => (
-                              <div>
-                                <h3 ref={countUpRef}></h3>
-                              </div>
-                            )}
-                          </CountUp>
-                   
+
+                        <CountUp start={0} end={12} delay={0}>
+                          {({ countUpRef }) => (
+                            <div>
+                              <h3 ref={countUpRef}></h3>
+                            </div>
+                          )}
+                        </CountUp>
+
                         <h3>
                           <span>years of</span>
                         </h3>
@@ -112,7 +118,7 @@ const About = () => {
                   </div>
                 </div>
               </div>
-                
+
 
             </div>
           </div>

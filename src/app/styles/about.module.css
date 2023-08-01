@@ -17,6 +17,7 @@
 .aboutContent {
   max-width: 680px;
   margin: auto;
+  perspective: 20px;
 }
 .aboutContent p {
   text-align: justify;

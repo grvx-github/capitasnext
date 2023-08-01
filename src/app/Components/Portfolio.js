@@ -1,18 +1,20 @@
 import React, { useRef, useState } from 'react';
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
+
 import PortfolioData from "../portfolioData";
 
 import Image from "next/image";
 import Link from "next/link";
-import styles from "@/app/styles/portfolio.module.css"
+
 
 // Swiper styles
-import 'swiper/css';
+import "swiper/css";
 import 'swiper/css/free-mode';
 // import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
+
+import styles from "@/app/styles/portfolio.module.css"
 
 import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
 
@@ -31,10 +33,7 @@ export const Portfolio = () => {
 		// 	<h2 className='formula'>Our Portfolio</h2>
 		// 	<div className="container-fluid">
 		// 		<div className={`row mi-a ${styles.swiperWrapper}`}>
-		// 			<Swiper style={{
-		// 				'--swiper-navigation-color': '#fff',
-		// 				'--swiper-pagination-color': '#fff',
-		// 			}}
+		// 			<Swiper
 		// 				spaceBetween={10}
 		// 				navigation={true}
 		// 				thumbs={{ swiper: thumbsSwiper }}

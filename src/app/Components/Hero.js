@@ -2,11 +2,12 @@
 
 import Image from "next/image";
 import styles from "@/app/styles/hero.module.css";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
 
 function Hero() {
   const welRef = useRef(null);
+  const tl = useRef(null);
   const desRef = useRef(null);
   const typRef = useRef(null);
   const BtnRef = useRef(null);
@@ -48,15 +49,23 @@ function Hero() {
     return () => {
       clearTimeout(timer);
     };
-  }); 
+  });
 
-  useEffect(() => {
-    const tl = gsap.timeline();
-    tl.fromTo(welRef.current, { y: 100, opacity: 0.1 }, { y: 0, opacity: 1, duration: 1, ease: "in" })
-    tl.fromTo(desRef.current, { yPercent: 100, opacity: 0.1 }, { yPercent: 0, opacity: 1, duration: 1 })
-    tl.fromTo(typRef.current, { opacity: 0 }, { opacity: 1, duration: 1 })
-    tl.fromTo(BtnRef.current, { yPercent: 100 }, { yPercent: 0, duration: 1, ease: "in" })
-  })
+  useLayoutEffect(() => {
+    let ctx = gsap.context(() => {
+      tl.current && tl.current.progress(0).kill()
+      tl.current = gsap.timeline()
+        .fromTo(welRef.current, { y: -10, z: 2, opacity: 0.1 }, { y: 0, z:0, opacity: 1, duration: 1, ease: "in" })
+        .fromTo(desRef.current, { yPercent: 100, opacity: 0 }, { yPercent: 0, opacity: 1, duration: 1 })
+
+        .fromTo(BtnRef.current, { yPercent: 100, opacity: 0 }, { yPercent: 0, opacity:1, duration: 1, ease: "in" })
+        .fromTo(typRef.current, { opacity: 0 }, { opacity: 1, duration: 1, delay: 1 })
+
+    }, welRef)
+
+    return () => ctx.revert();
+
+  }, [])
 
   return (
     <section className={styles.heroSection} id="home">

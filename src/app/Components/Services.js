@@ -3,8 +3,17 @@
 import ServiceCard from "./ServiceCard";
 import cardDetails from "@/app/services"
 import styles from '@/app/styles/services.module.css'
+import { useLayoutEffect, useRef } from "react";
+import { gsap } from "gsap";
 
 export const Services = () => {
+	const wRef = useRef()
+
+	useLayoutEffect(() => {
+		let ctx = gsap.context(() => {
+			gsap.fromTo(wRef.current, {width: "0"}, {width: "100%", duration: 0.7, ease: "inOut"})
+		}, wRef)
+	}, [])
 
 	return (
 		<div className={styles.servicesSection}>
@@ -18,7 +27,7 @@ export const Services = () => {
 							icon={entry.icon} 
 							title={entry.title}
 							content={entry.content}
-							
+							ref={wRef}
 						/>
 					))}
 				</div>

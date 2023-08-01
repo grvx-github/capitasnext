@@ -1,7 +1,8 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useRef, useLayoutEffect } from "react";
 import testimonialData from "../testimonialdata";
 import Image from "next/image";
+import { gsap } from "gsap";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -16,6 +17,15 @@ const Testimonial = () => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const [firstSwiper, setFirstSwiper] = useState(null);
 
+  const tRef = useRef()
+  const tesRef = useRef()
+
+  useLayoutEffect(() => {
+    let ctx = gsap.context(() => {
+      gsap.fromTo(tRef.current, {xPercent: 20, opacity: 0}, {xPercent: 0, opacity:1, duration: 0.6, ease: "in"})
+      gsap.from(tesRef.current, {width: "0"}, {width: "100%", duration: 0.7, ease: 0.7})
+    }, tRef)
+  }, [])
 
   return (
     <div className={styles.testimonialsMain}>
@@ -34,7 +44,7 @@ const Testimonial = () => {
                 {testimonialData.map((testi, i) => {
                   return (
                     <SwiperSlide key={i}>
-                      <div className={`${styles.testiWrapper} d-flex`}>
+                      <div className={`${styles.testiWrapper} d-flex`} ref={tesRef}>
                         <div
                           className={`${styles.testi} d-flex`}
                           style={{
@@ -62,7 +72,7 @@ const Testimonial = () => {
               </Swiper>
             </div>
 
-            <div className={`${styles.bottomR} col-lg-6`}>
+            <div className={`${styles.bottomR} col-lg-6`} ref={tRef}>
               <h3>
                 Why do people love <span className="formula">Zerror</span>
               </h3>
