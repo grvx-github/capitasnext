@@ -15,7 +15,7 @@ const Features = () => {
 
 	useLayoutEffect(() => {
 		let ctx = gsap.context(() => {
-			gsap.fromTo(lRefi.current, {yPercent: 100, opacity: 0}, {yPercent: 0, opacity:1, duration: 0.5, ease: "in"}, )
+			gsap.fromTo(lRefi.current, { yPercent: 100, opacity: 0 }, { yPercent: 0, opacity: 1, duration: 0.5, ease: "in" },)
 		}, lRefi)
 		return () => ctx.revert();
 	}, [])
@@ -23,17 +23,11 @@ const Features = () => {
 	return (
 		<div className={`container ${styles.featuresContainer}`}>
 			<section className={` ${styles.investorSection} mt-4`}>
-				<div className={styles.gus}>
-					<div className={`${styles}`}>
-						<div className={`${styles.mainTitle} text-center`}>
-							<h2 className="formula">
-								<span>OUR</span> FEATURE
-							</h2>
-							<strong /> {/* Use for heading after effect */}
-						</div>
-					</div>{" "}
-					{/* /.section-heading */}
-					<div className={`${styles.circleItems.fadeInUp}`}>
+				<div className={`${styles.mainTitle} text-center`}>
+					<h2 className="formula">
+						<span>OUR</span> FEATURE
+					</h2>
+					<div className={`${styles.circleItems} ${styles.fadeInUp}`}>
 						<div className={`${styles.wheel}`}>
 							<div className={`${styles.featureThings}`}>
 								<span>

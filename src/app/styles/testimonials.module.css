@@ -62,3 +62,15 @@
   border-radius: 2.5px;
 
 }
+
+@media screen and (max-width: 767px) {
+  .testimonialsMain{
+    padding: 3rem 1rem;
+  }
+  .tBodySection{
+    padding: 2rem 1rem;
+  }
+  .testi{
+    width: 325px;
+  }
+}

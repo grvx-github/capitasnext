@@ -8,6 +8,13 @@ import { useState, useEffect } from "react";
 const Header = () => {
   const [navbarBgColor, setNavbarBgColor] = useState("transparent");
 
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+
   // Add an event listener to change the background color on scrolling
   useEffect(() => {
     const handleScroll = () => {
@@ -26,36 +33,41 @@ const Header = () => {
     };
   }, []);
   return (
-    <div className={styles.headerWrappper}>
-      <div className={styles.nav} style={{ backgroundColor: navbarBgColor }}>
-        <div className={styles.logo}>
-          <Image src="/logo.png" height={50} width={100} alt=""></Image>
+    <div className={styles.nav} style={{ backgroundColor: navbarBgColor }}>
+      <div className={styles.logo}>
+        <Image src="/logo.png" height={50} width={100} alt=""></Image>
+      </div>
+      <div className={`${styles.collapseableMenu} ${isOpen ? styles.open : ""}`}>
+        <ul className={styles.dMenu}>
+          <li className={styles.navItem}>
+            <Link href="/">Home</Link>
+          </li>
+          <li className={styles.navItem}>
+            <Link href="/about">About</Link>
+          </li>
+          <li className={styles.navItem}>
+            <Link href="/services">Services</Link>
+          </li>
+          <li className={styles.navItem}>
+            <Link href="/testimonials">Testimonials</Link>
+          </li>
+          <li className={styles.navItem}>
+            <Link href="/contact">Contact</Link>
+          </li>
+        </ul>
+        <div className={styles.toggleButton} onClick={toggleMenu}>
+          <div className={`${styles.bar} ${isOpen ? styles.open : ""}`} />
+          <div className={`${styles.bar} ${isOpen ? styles.open : ""}`} />
+          <div className={`${styles.bar} ${isOpen ? styles.open : ""}`} />
         </div>
-        <div className={styles.collapseableMenu}>
-          <ul>
-            <li className={styles.navItem}>
-              <Link href="/">Home</Link>
-            </li>
-            <li className={styles.navItem}>
-              <Link href="/about">About</Link>
-            </li>
-            {/* <li className={styles.navItem}>
-              <Link href="/services">Services</Link>
-            </li> */}
-            <li className={styles.navItem}>
-              <Link href="/testimonials">Testimonials</Link>
-            </li>
-            <li className={styles.navItem}>
-              <Link href="/contact">Contact</Link>
-            </li>
-          </ul>
-        </div>
-        <div className={styles.socials}>
-          <Link href="#">Call Us: +1 (514) 022-8419</Link>
-          <div className={`d-flex ${styles.logins}`}>
-            <Link href="#" className={styles.loginBtn}>Log In</Link>
-            <button className={styles.signUp}>Sign Up</button>
-          </div>
+      </div>
+
+
+      <div className={styles.socials}>
+        <Link href="#">Call Us: +1 (514) 022-8419</Link>
+        <div className={`d-flex ${styles.logins}`}>
+          <Link href="#" className={styles.loginBtn}>Log In</Link>
+          <button className={styles.signUp}>Sign Up</button>
         </div>
       </div>
     </div>

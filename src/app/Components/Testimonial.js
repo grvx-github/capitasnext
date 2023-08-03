@@ -23,7 +23,7 @@ const Testimonial = () => {
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
       gsap.fromTo(tRef.current, {xPercent: 20, opacity: 0}, {xPercent: 0, opacity:1, duration: 0.6, ease: "in"})
-      gsap.from(tesRef.current, {width: "0"}, {width: "100%", duration: 0.7, ease: 0.7})
+      gsap.from(tesRef.current, {width: "0"}, {width: "100%", duration: 0.7, ease: 0.7, scrollTrigger: {trigger: ".testimonalsMain"}})
     }, tRef)
   }, [])
 

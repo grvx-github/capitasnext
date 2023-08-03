@@ -11,6 +11,7 @@
   transition: all 0.2s ease-in;
   font-size: 1.1rem;
 }
+
 .collapseableMenu {
   display: flex;
   justify-content: space-between;
@@ -18,16 +19,21 @@
   flex: 1 0 50%;
   margin-left: 3%;
 }
-.logo{
+
+.logo {
   flex: 1 0 10%;
 }
-.logo img{
+
+.logo img {
   width: 100%;
 }
-.header .socials{
-  flex: 1 0 30%;
+
+.nav .socials {
+  /* Change .header to .nav here */
+  flex: 1 0 35%;
 }
-.collapseableMenu ul {
+
+.dMenu {
   list-style: none;
   display: flex;
   text-decoration: none;
@@ -36,26 +42,32 @@
   margin-bottom: 0;
   font-size: 1.1rem;
 }
-.collapseableMenu a {
+
+.dMenu a {
   text-decoration: none;
   color: inherit;
 }
-.collapseableMenu a:hover{
+
+.dMenu a:hover {
   color: rgba(231, 244, 255, 0.863);
 }
+
 .socials {
   display: flex;
   column-gap: 2rem;
   padding-right: 2rem;
   align-items: center;
 }
-.socials>a{
+
+.socials > a {
   text-decoration: none;
   color: aliceblue;
 }
-.socials >a:hover{
-  color: rgba(231, 244, 255, 0.863);;
+
+.socials > a:hover {
+  color: rgba(231, 244, 255, 0.863);
 }
+
 .signUp {
   background-color: #2f3e6583;
   padding: 0.5rem 1rem;
@@ -66,16 +78,19 @@
   transform: skewX(-20deg);
   color: white;
 }
+
 .signUp:hover {
   background-color: #2f3e65;
   color: white;
 }
+
 .logins {
   justify-content: space-between;
   align-items: center;
   position: relative;
 }
-.loginBtn{
+
+.loginBtn {
   position: relative;
   -ms-transform: skewX(-20deg);
   -webkit-transform: skewX(-20deg);
@@ -85,10 +100,65 @@
   padding: 0.5rem 1rem;
   background-color: white;
   color: darkblue;
-  transition: all .25s ease;
+  transition: all 0.25s ease;
   text-decoration: none;
 }
-.loginBtn:hover{
-  background-color: #D4E2D4;
+
+.loginBtn:hover {
+  background-color: #d4e2d4;
   color: darkblue;
+}
+
+.toggleButton {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  cursor: pointer;
+}
+
+.bar {
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+  transition: transform 0.2s ease;
+}
+
+.open .bar:nth-child(1) {
+  transform: translateY(8px) rotate(-45deg);
+}
+
+.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.open .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(45deg);
+}
+
+@media (max-width: 768px) {
+  .dMenu {
+    display: none;
+  }
+
+  .toggleButton {
+    display: flex;
+  }
+  .collapseableMenu.open .dMenu{
+    display: flex;
+    flex-direction: column;
+    
+  }
+  .collapseableMenu{
+    margin-left: auto;
+  }
+  .nav{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 1rem;
+  }
+  .socials {
+    display: none;
+  }
 }

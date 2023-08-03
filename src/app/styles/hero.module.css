@@ -132,3 +132,16 @@
 .btn2:hover {
   background-color: #2f3e65;
 }
+
+@media screen and (max-width: 768px) {
+  .bannerMain{
+    margin-top: 7rem;
+  }
+  .welcome{
+    width: 100%;
+    flex-direction: column;
+  }
+  .welcome img{
+    width: 50%;
+  }
+}

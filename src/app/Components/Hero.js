@@ -69,7 +69,7 @@ function Hero() {
 
   return (
     <section className={styles.heroSection} id="home">
-      <div className={styles.container}>
+      <div className="container">
         <div className={styles.bannerMain}>
           <div className={styles.bannerText}>
             <div className={styles.welcome} ref={welRef}>

@@ -11,7 +11,7 @@ export const Services = () => {
 
 	useLayoutEffect(() => {
 		let ctx = gsap.context(() => {
-			gsap.fromTo(wRef.current, {width: "0"}, {width: "100%", duration: 0.7, ease: "inOut"})
+			gsap.fromTo(wRef.current, { width: "0" }, { width: "100%", duration: 0.7, ease: "inOut", scrollTrigger: { trigger: ".serviceHead" } })
 		}, wRef)
 	}, [])
 

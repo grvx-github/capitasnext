@@ -59,7 +59,7 @@
   position: relative;
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
+  justify-content: space-around;
 }
 .counterCard h3 {
   font-weight: 700;
@@ -255,4 +255,177 @@
 }
 .featureMainImg img {
   max-width: 100%;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .featureThings span {
+    font-size: 16px;
+  }
+
+  .featureThings [class^="flaticon-"]:before,
+  .featureThings [class*=" flaticon-"]:before,
+  .featureThings [class^="flaticon-"]:after,
+  .featureThings [class*=" flaticon-"]:after {
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+  }
+
+  .featureThings a {
+    border: 3px solid #0089e9;
+  }
+
+  .featureThings a:hover {
+    border: 3px solid #fff;
+  }
+
+  .circleItems {
+    margin-top: 70px;
+  }
+
+  .wheel {
+    width: 340px;
+    height: 340px;
+  }
+
+  .wheel .featureThings:nth-of-type(1) {
+    -webkit-transform: translateX(-62%);
+    -moz-transform: translateX(-62%);
+    -ms-transform: translateX(-62%);
+    -o-transform: translateX(-62%);
+    transform: translateX(-62%);
+  }
+
+  .wheel .featureThings:nth-of-type(3) {
+    -webkit-transform: translateX(70%);
+    -moz-transform: translateX(70%);
+    -ms-transform: translateX(70%);
+    -o-transform: translateX(70%);
+    transform: translateX(70%);
+  }
+}
+
+@media screen  and (max-width: 767px) {
+  .aboutSection {
+    padding: 2rem;
+    padding-left: 0;
+  }
+
+  .featureThings span {
+    font-size: 10px;
+    padding: 0px;
+  }
+
+  .featureThings [class^="flaticon-"]:before,
+  .featureThings [class*=" flaticon-"]:before,
+  .featureThings [class^="flaticon-"]:after,
+  .featureThings [class*=" flaticon-"]:after {
+    width: 35px;
+    height: 35px;
+    font-size: 20px;
+  }
+
+  .featureThings a {
+    border: 2px solid #0089e9;
+  }
+
+  .featureThings a:hover {
+    border: 2px solid #fff;
+  }
+
+  .circleItems {
+    margin-top: 30px;
+    background: url(/feature-bg.png);
+    background-repeat: no-repeat;
+    background-size: 80% 40%;
+    background-position: bottom center;
+    position: relative;
+    z-index: 100;
+  }
+
+  .wheel {
+    width: 100%;
+    height: 415px;
+    border: none;
+    overflow: hidden;
+    border-radius: 0;
+  }
+
+  .wheel:after {
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 58%;
+    border-left: 3px dotted #c1c1c1;
+    top: 15px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    z-index: -10;
+  }
+
+  .wheel .featureThings:nth-of-type(1),
+  .wheel .featureThings:nth-of-type(2),
+  .wheel .featureThings:nth-of-type(3),
+  .wheel .featureThings:nth-of-type(4) {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    transform: translateX(0);
+    position: static;
+    left: 0;
+  }
+
+  .wheel .featureThings:nth-of-type(1) {
+    position: absolute;
+    left: 50%;
+    top: 10px;
+    -webkit-transform: translateX(-82%);
+    -moz-transform: translateX(-82%);
+    -ms-transform: translateX(-82%);
+    -o-transform: translateX(-82%);
+    transform: translateX(-82%);
+  }
+
+  .wheel .featureThings:nth-of-type(2) {
+    position: absolute;
+    left: 50%;
+    top: 130px;
+    -webkit-transform: translateX(-85%);
+    -moz-transform: translateX(-85%);
+    -ms-transform: translateX(-85%);
+    -o-transform: translateX(-85%);
+    transform: translateX(-85%);
+  }
+
+  .wheel .featureThings:nth-of-type(3) {
+    width: 50%;
+    position: absolute;
+    left: 50%;
+    top: 70px;
+    -webkit-transform: translateX(-40px);
+    -moz-transform: translateX(-40px);
+    -ms-transform: translateX(-40px);
+    -o-transform: translateX(-40px);
+    transform: translateX(-40px);
+  }
+
+  .wheel .featureThings:nth-of-type(4) {
+    width: 50%;
+    position: absolute;
+    left: 50%;
+    top: 190px;
+    -webkit-transform: translateX(-40px);
+    -moz-transform: translateX(-40px);
+    -ms-transform: translateX(-40px);
+    -o-transform: translateX(-40px);
+    transform: translateX(-40px);
+  }
+
+  .featureMainImg {
+    display: none;
+  }
 }

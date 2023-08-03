@@ -16,7 +16,7 @@ const About = () => {
     let ctx = gsap.context(() => {
       tl.current && tl.current.progress(0).kill()
       tl.current = gsap.timeline()
-        .fromTo(hiRef.current, { yPercent: -2, z: 2, opacity: 0 }, { yPercent: 0, z: 0, opacity: 1, duration: 0.7, ease: "in" })
+        .fromTo(hiRef.current, { yPercent: -2, z: 2, opacity: 0 }, { yPercent: 0, z: 0, opacity: 1, duration: 0.7, ease: "in", scrollTrigger: { trigger: ".aboutContent" } })
         .fromTo(xRef.current, { xPercent: -10, opacity: 0 }, { xPercent: 0, opacity: 1, duration: 0.7, ease: "in" })
         .fromTo(pRef.current, { xPercent: -10, opacity: 0 }, { xPercent: 0, opacity: 1, duration: 0.7, ease: "in" })
         .fromTo(lRef.current, { xPercent: -10, opacity: 0 }, { xPercent: 0, opacity: 1, duration: 0.7, ease: "in" })
@@ -64,15 +64,16 @@ const About = () => {
                 <div className="row justify-content-center">
                   <div className="col-lg-4 col-md-4 col-sm-6">
                     <div className={`${styles.counterCard}`}>
-                      <div className="wrapper" >
-
+                      <div className="wrapper" style={{minHeight: "61px"}}>
+                        <div>
                         <CountUp start={0} end={12} delay={0}>
                           {({ countUpRef }) => (
-                            <div>
+                            
                               <h3 ref={countUpRef}></h3>
-                            </div>
+                            
                           )}
                         </CountUp>
+                        </div>
 
                         <h3>
                           <span>years of</span>
@@ -83,7 +84,7 @@ const About = () => {
                   </div>
                   <div className="col-lg-4 col-md-4 col-sm-6">
                     <div className={`${styles.counterCard}`}>
-                      <div className="wrapper">
+                      <div className="wrapper" style={{minHeight: "61px"}}>
                         <CountUp start={0} end={70} delay={0}>
                           {({ countUpRef }) => (
                             <div>
@@ -100,7 +101,7 @@ const About = () => {
                   </div>
                   <div className="col-lg-4 col-md-4 col-sm-6">
                     <div className={`${styles.counterCard}`}>
-                      <div className="wrapper">
+                      <div className="wrapper" style={{minHeight: "61px"}}>
                         <CountUp start={0} end={2} delay={0}>
                           {({ countUpRef }) => (
                             <div>

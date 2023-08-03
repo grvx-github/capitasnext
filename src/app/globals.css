@@ -141,3 +141,8 @@ li > a {
 .servicePage .serviceHead{
   color: #0b2464;
 }
+@media screen and (max-width:768px) {
+  h2{
+    font-size: 2rem!important;
+  }
+}
