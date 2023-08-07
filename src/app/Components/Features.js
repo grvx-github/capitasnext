@@ -15,7 +15,7 @@ const Features = () => {
 
 	useLayoutEffect(() => {
 		let ctx = gsap.context(() => {
-			gsap.fromTo(lRefi.current, { yPercent: 100, opacity: 0 }, { yPercent: 0, opacity: 1, duration: 0.5, ease: "in" },)
+			gsap.to(lRefi.current, { yPercent: 0, opacity: 1, duration: 0.5, ease: "in", scrollTrigger: { trigger: ".investorSection", markers: true, start: "top top", stop: "+-50" } })
 		}, lRefi)
 		return () => ctx.revert();
 	}, [])

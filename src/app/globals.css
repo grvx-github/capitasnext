@@ -133,16 +133,99 @@ li > a {
   position: relative;
 }
 
-.servicePage .servicesSection{
-  transform-style:flat;
-  transform: translateZ(0)scale(1);
+/* Service Page */
+.servicesMain {
+  padding: 6rem 2rem 4rem;
+}
+.servicesMain .row {
+  text-align: center;
+  justify-content: space-around;
+}
+.serviceBox {
+  padding: 1rem;
+  width: 100%;
+  transform: translate3d(0px, 0px, 0px);
+  transform-style: preserve-3d;
+}
+.serviceItem {
+  height: 25rem;
+  position: relative;
+}
+.serviceItem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+.servicePage .servicesSection {
+  transform-style: flat;
+  transform: translateZ(0) scale(1);
   padding-top: 2rem;
 }
-.servicePage .serviceHead{
+.servicePage .serviceHead {
   color: #0b2464;
 }
-@media screen and (max-width:768px) {
-  h2{
-    font-size: 2rem!important;
+
+.aboutContent {
+  max-width: 680px;
+  margin: auto;
+  perspective: 20px;
+}
+.aboutContent p {
+  text-align: justify;
+}
+@media screen and (max-width: 768px) {
+  h2 {
+    font-size: 2rem !important;
+  }
+}
+
+/* ServicePage */
+.serviceMain .row {
+  gap: 1rem;
+  text-align: center;
+}
+
+.textDiv {
+  background-color: rgba(14, 14, 14, 0.6);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: absolute;
+  top: 0%;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
+  color: white!important;
+}
+.serviceListIcon svg {
+  width: 50px !important;
+}
+.serviceBox .visible{
+  display: flex;
+  row-gap: 1rem;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+}
+.serviceBox .inv{
+  opacity: 0;
+  
+  padding: 2rem 4rem;
+  transform-style: preserve-3d;
+}
+.inv.boxAnimate{
+  animation: bAni 0.3s ease 0.1s ;
+  transform: translate3d(0px 0px 0px);
+}
+
+@keyframes bAni {
+  0%{
+    transform: translate3d(0 80px 0px);
+  }
+  100%{
+    transform: translate3d(0px 0px 0px);
   }
 }

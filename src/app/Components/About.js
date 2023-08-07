@@ -2,8 +2,9 @@
 
 import styles from "@/app/styles/about.module.css";
 import CountUp from "react-countup";
-import { useLayoutEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import ScrollTrigger from 'gsap/ScrollTrigger';
 
 const About = () => {
   const divRef = useRef(null);
@@ -11,20 +12,23 @@ const About = () => {
   const xRef = useRef()
   const pRef = useRef()
   const lRef = useRef()
-  const tl = useRef();
-  useLayoutEffect(() => {
-    let ctx = gsap.context(() => {
-      tl.current && tl.current.progress(0).kill()
-      tl.current = gsap.timeline()
-        .fromTo(hiRef.current, { yPercent: -2, z: 2, opacity: 0 }, { yPercent: 0, z: 0, opacity: 1, duration: 0.7, ease: "in", scrollTrigger: { trigger: ".aboutContent" } })
-        .fromTo(xRef.current, { xPercent: -10, opacity: 0 }, { xPercent: 0, opacity: 1, duration: 0.7, ease: "in" })
-        .fromTo(pRef.current, { xPercent: -10, opacity: 0 }, { xPercent: 0, opacity: 1, duration: 0.7, ease: "in" })
-        .fromTo(lRef.current, { xPercent: -10, opacity: 0 }, { xPercent: 0, opacity: 1, duration: 0.7, ease: "in" })
-        .fromTo(divRef.current, { xPercent: 10, opacity: 0 }, { xPercent: 0, opacity: 1, duration: 0.7, delay: 0.2, ease: "inOut" })
-        
-    }, hiRef);
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger)
+    let tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".aboutSection",
+        start: "top top",
+        end: "bottom top",
+        toggleActions: "restart none none reset",
+      }
+    });
+    tl.fromTo(hiRef, { yPercent: -2, z: 2, opacity: 0 }, { yPercent: 0, z: 0, opacity: 1, duration: 0.7, ease: "in" })
+      .fromTo(xRef, { xPercent: -10, opacity: 0 }, { xPercent: 0, opacity: 1, duration: 0.7, ease: "in" })
+      .fromTo(pRef, { xPercent: -10, opacity: 0 }, { xPercent: 0, opacity: 1, duration: 0.7, ease: "in" })
+      .fromTo(lRef, { xPercent: -10, opacity: 0 }, { xPercent: 0, opacity: 1, duration: 0.7, ease: "in" })
+      .fromTo(divRef, { xPercent: 10, opacity: 0 }, { xPercent: 0, opacity: 1, duration: 0.7, delay: 0.2, ease: "inOut" });
 
-    return () => ctx.revert();
+    // return () => ctx.revert();
 
   }, [])
 
@@ -33,7 +37,7 @@ const About = () => {
       <div className="container-fluid">
         <div className="row">
           <div className=" row col-lg-6 col-md-12 mx-2">
-            <div className={styles.aboutContent}>
+            <div className="aboutContent">
               <h2 className="formula mb-4" ref={hiRef}>
                 Zerror Studios
               </h2>
@@ -64,15 +68,15 @@ const About = () => {
                 <div className="row justify-content-center">
                   <div className="col-lg-4 col-md-4 col-sm-6">
                     <div className={`${styles.counterCard}`}>
-                      <div className="wrapper" style={{minHeight: "61px"}}>
+                      <div className="wrapper" style={{ minHeight: "61px" }}>
                         <div>
-                        <CountUp start={0} end={12} delay={0}>
-                          {({ countUpRef }) => (
-                            
+                          <CountUp start={0} end={12} delay={0}>
+                            {({ countUpRef }) => (
+
                               <h3 ref={countUpRef}></h3>
-                            
-                          )}
-                        </CountUp>
+
+                            )}
+                          </CountUp>
                         </div>
 
                         <h3>
@@ -84,7 +88,7 @@ const About = () => {
                   </div>
                   <div className="col-lg-4 col-md-4 col-sm-6">
                     <div className={`${styles.counterCard}`}>
-                      <div className="wrapper" style={{minHeight: "61px"}}>
+                      <div className="wrapper" style={{ minHeight: "61px" }}>
                         <CountUp start={0} end={70} delay={0}>
                           {({ countUpRef }) => (
                             <div>
@@ -101,7 +105,7 @@ const About = () => {
                   </div>
                   <div className="col-lg-4 col-md-4 col-sm-6">
                     <div className={`${styles.counterCard}`}>
-                      <div className="wrapper" style={{minHeight: "61px"}}>
+                      <div className="wrapper" style={{ minHeight: "61px" }}>
                         <CountUp start={0} end={2} delay={0}>
                           {({ countUpRef }) => (
                             <div>
@@ -130,6 +134,6 @@ const About = () => {
       </div>
     </div>
   );
-};
+}
 
 export default About;

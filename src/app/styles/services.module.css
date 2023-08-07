@@ -1,15 +1,15 @@
 .servicesSection {
   padding-top: 8rem;
   margin-top: 2rem;
-  background: url('/banner.png');
+  background: url("/banner.png");
   background-position: cover;
   transform-style: preserve-3d;
-  transform: translateZ(-90px)scale(1.9);
+  /* transform: translateZ(-90px)scale(1.9); */
 }
-.servicesSection{
+.servicesSection {
   text-align: center;
 }
-.serviceHead{
+.serviceHead {
   font-size: 2.5rem;
   font-weight: 800;
   margin-bottom: 3rem;
@@ -31,26 +31,27 @@
   max-width: 85%;
   margin-inline: auto;
   padding: 4.5rem 2rem;
-  transition: all 0.2s ease ;
+  transition: all 0.2s ease;
 }
-.hiddenIcon{
+.hiddenIcon {
   display: none;
 }
-.serviceCardItem:hover{
+.serviceCardItem:hover {
   color: white;
 }
 
-.serviceCardItem:hover .cardContent{
-  transform: scale(1.1);}
-.serviceCardItem>img{
-  transition: all .2s ease;
+.serviceCardItem:hover .cardContent {
+  transform: scale(1.1);
 }
-.serviceCardItem:hover .serviceCard>img{
+.serviceCardItem > img {
+  transition: all 0.2s ease;
+}
+.serviceCardItem:hover .serviceCard > img {
   display: none;
 }
-.serviceCardItem:hover .hiddenIcon{
+.serviceCardItem:hover .hiddenIcon {
   display: block;
-  transition: all .2s ease;
+  transition: all 0.2s ease;
 }
 
 .serviceCardIcon {
@@ -71,7 +72,7 @@
   transform: translateX(-50%);
   transition: 0.2s ease;
 }
-.serviceCardItem:hover .serviceCardIcon{
+.serviceCardItem:hover .serviceCardIcon {
   border: 1px solid white;
 }
 .serviceCardIcon > img {
@@ -86,15 +87,17 @@
   -o-transition: all 0.3s ease-out 0s;
   transition: all 0.3s ease-out 0s;
 }
-.cardContent{
+.cardContent {
   margin-top: 2rem;
-  transition: all .2s ease;
+  transition: all 0.2s ease;
 }
 @media screen and (max-width: 767px) {
-  .servicesSection{
+  .servicesSection {
     transform: none;
   }
-  .serviceCardItem{
+  .serviceCardItem {
     max-width: 100%;
   }
 }
+
+/* Services page */

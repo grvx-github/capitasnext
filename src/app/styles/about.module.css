@@ -14,14 +14,7 @@
   height: 4rem;
   width: 100%;
 }
-.aboutContent {
-  max-width: 680px;
-  margin: auto;
-  perspective: 20px;
-}
-.aboutContent p {
-  text-align: justify;
-}
+
 .aboutImg {
   background-image: url(../../../public/aboutImg.png);
   background-position: center center;

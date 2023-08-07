@@ -3,8 +3,13 @@
 import ServiceCard from "./ServiceCard";
 import cardDetails from "@/app/services"
 import styles from '@/app/styles/services.module.css'
+
+
+
 import { useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
+ 
+
 
 export const Services = () => {
 	const wRef = useRef()
