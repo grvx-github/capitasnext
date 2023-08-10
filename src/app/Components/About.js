@@ -36,7 +36,7 @@ const About = () => {
     <div className={`${styles.aboutSection} mt-4`}>
       <div className="container-fluid">
         <div className="row">
-          <div className=" row col-lg-6 col-md-12 mx-2">
+          <div className=" row col-lg-6 col-md-12 mx-2" data-aos="fade-right">
             <div className="aboutContent">
               <h2 className="formula mb-4" ref={hiRef}>
                 Zerror Studios
@@ -127,7 +127,7 @@ const About = () => {
 
             </div>
           </div>
-          <div className="row col-lg-6 col-md-12" ref={divRef}>
+          <div className="row col-lg-6 col-md-12" ref={divRef} data-aos="fade-left">
             <div className={styles.aboutImg}></div>
           </div>
         </div>

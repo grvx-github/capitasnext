@@ -136,10 +136,33 @@
 .open .bar:nth-child(3) {
   transform: translateY(-8px) rotate(45deg);
 }
+.setfp{
+  animation: slideIn 0.3s ease 0.05;
+}
+
+@keyframes slideIn {
+  0%{
+    transform: translateX(100);
+  }
+  100%{
+    transform: translateX(0);
+  }
+}
 
 @media (max-width: 768px) {
   .dMenu {
     display: none;
+    position: absolute;
+    padding: 2rem;
+    background-color: white;
+    gap: 1rem;
+    font-size: 1.3rem;
+    right: 0;
+    top: 69%;
+    color: black;
+    width: 70%;
+    text-align: right;
+    transition: all 0.2s ease;
   }
 
   .toggleButton {
@@ -155,7 +178,7 @@
   }
   .nav{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 2fr;
     padding: 1rem;
   }
   .socials {

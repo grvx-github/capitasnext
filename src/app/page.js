@@ -1,5 +1,8 @@
 'use client'
 
+import { useEffect } from "react";
+import AOS from "aos";
+
 import Hero from './Components/Hero';
 import Header from './Components/Header';
 import About from './Components/About';
@@ -17,6 +20,13 @@ const roboto = Roboto_Condensed({
 })
 
 export default function Home() {
+  useEffect(() => {
+    AOS.init({
+      easing: "ease-out-cubic",
+      once: true,
+      offset: 50,
+    });
+  }, []);
   return (
     <>
       <Header />

@@ -22,6 +22,7 @@ const Cards = [
 		title: "STRATEGIC ADVISORY",
 		content: 'Claritas etiam processus dynamicus, qui sequitur mutationem.'
 	}
+	
 ]
 
 export default Cards;

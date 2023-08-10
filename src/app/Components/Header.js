@@ -9,9 +9,11 @@ const Header = () => {
   const [navbarBgColor, setNavbarBgColor] = useState("transparent");
 
   const [isOpen, setIsOpen] = useState(false);
+  const [fp, setfp] = useState("");
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+    setfp("ani");
   };
 
 
@@ -37,7 +39,7 @@ const Header = () => {
       <div className={styles.logo}>
         <Image src="/logo.png" height={50} width={100} alt=""></Image>
       </div>
-      <div className={`${styles.collapseableMenu} ${isOpen ? styles.open : ""}`}>
+      <div className={`${styles.collapseableMenu} ${isOpen ? styles.open : ""} ${fp}`} data-aos="fade-left">
         <ul className={styles.dMenu}>
           <li className={styles.navItem}>
             <Link href="/">Home</Link>
