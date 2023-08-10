@@ -70,7 +70,7 @@ const Features = () => {
 								</span>
 							</div>
 							{/* <div class="border-circle"></div> */}
-							<div className={`${styles.featureMainImg}`} ref={lRefi}>
+							<div className={`${styles.featureMainImg}`} ref={lRefi} data-aos="fade-up">
 								<Image
 									src="/feature-bg.png"
 									alt="Feature"

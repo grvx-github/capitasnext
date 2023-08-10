@@ -220,6 +220,14 @@ li > a {
   animation: bAni 0.3s ease 0.1s ;
   transform: translate3d(0px 0px 0px);
 }
+.footer input{
+  height: 0;
+  margin-top: 2rem;
+}
+.footer textarea{
+  height: 0;
+  margin-top: 3rem;
+}
 
 @keyframes bAni {
   0%{

@@ -43,7 +43,7 @@ export const Portfolio = () => {
 							return (
 								<SwiperSlide key={index}>
 									<div className={`${styles.pCard} col-lg-9 col-sm-12 mi-a`} onMouseOver={handleMouseOver}
-									onMouseOut={handleMouseOut}>
+									onMouseOut={handleMouseOut} data-aos="fade-up">
 										<div className="card">
 											<div className="card-img-top">
 												<Image className={styles.cardImg} src={card.img} alt="" width={1000} height={1000} />

@@ -46,7 +46,13 @@
 	color: #d2d6e1b6;
 }
 .formDiv label >input{
-	margin-block: 0.5rem;
+	margin-block: 3rem 0.5rem;
+	height: 0!important;
+	border-width: 1px;
+}
+.formDiv label > textarea{
+	height: 0!important;
+	margin-top: 3rem;
 }
 
 @media screen and (max-width: 767px) {

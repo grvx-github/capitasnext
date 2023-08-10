@@ -32,7 +32,7 @@ const Testimonial = () => {
       <div className={`${styles.tBodySection} container-fluid`}>
         <div className="row">
           <div className={`${styles.BodyBottom} row`}>
-            <div className={`${styles.bottomL} col-lg-6 d-flex`}>
+            <div className={`${styles.bottomL} col-lg-6 d-flex`} data-aos="fade-right">
               <Swiper
                 direction={"vertical"}
                 slidesPerView={3}
@@ -72,7 +72,7 @@ const Testimonial = () => {
               </Swiper>
             </div>
 
-            <div className={`${styles.bottomR} col-lg-6`} ref={tRef}>
+            <div className={`${styles.bottomR} col-lg-6`} ref={tRef} data-aos="fade-right">
               <h3>
                 Why do people love <span className="formula">Zerror</span>
               </h3>
