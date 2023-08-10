@@ -14,25 +14,26 @@ const ServiceBox = (props) => {
 	// let iconStyles = { fontSize: "2.5em" };
 
 	return (
-		<div className="serviceBox" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-			<div className="serviceItem">
-				<Image src={props.img} alt="" height={400} width={400} />
-				<div className="textDiv">
-					<div className="visible">
-						<div className="serviceListIcon">
-							{props.icon}
-						</div>
-						<h4 className="serviceListTitle">{props.title}</h4>
-					</div>
-					<div className={`inv`} style={hovStyle}>
-						<p>
-							{props.content}
-						</p>
-						<Link href="">Read More</Link>
-					</div>
-				</div>
-			</div>
-		</div>
+		// <div className="serviceBox" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+		// 	<div className="serviceItem">
+		// 		<Image src={props.img} alt="" height={400} width={400} />
+		// 		<div className="textDiv">
+		// 			<div className="visible">
+		// 				<div className="serviceListIcon">
+		// 					{props.icon}
+		// 				</div>
+		// 				<h4 className="serviceListTitle">{props.title}</h4>
+		// 			</div>
+		// 			<div className={`inv`} style={hovStyle}>
+		// 				<p>
+		// 					{props.content}
+		// 				</p>
+		// 				<Link href="">Read More</Link>
+		// 			</div>
+		// 		</div>
+		// 	</div>
+		// </div>
+		<div></div>
 	)
 }
 
